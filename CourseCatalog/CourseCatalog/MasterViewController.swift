@@ -10,8 +10,13 @@ import UIKit
 
 class MasterViewController: UITableViewController {
 
-    var objects = [AnyObject]()
-
+    @IBOutlet var subjectCourseTable: UITableView!
+    var subjects = ["Computer Science","Electrical & Computer Engineering","Physics","Mathematics"]
+    var searchArray:[String] = [String]() {
+        didSet  {self.subjectCourseTable.reloadData()}
+    }
+    var subjectCourseSearchController = UISearchController()
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,22 +24,32 @@ class MasterViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        self.navigationItem.leftBarButtonItem = self.editButtonItem()
-
-        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
-        self.navigationItem.rightBarButtonItem = addButton
+        
+        // Configure countryTable
+        self.subjectCourseTable.delegate = self
+        self.subjectCourseTable.dataSource = self
+        
+        // Configure countrySearchController
+        self.subjectCourseSearchController = ({
+            // Two setups provided below:
+            
+            // Setup One: This setup present the results in the current view.
+            let controller = UISearchController(searchResultsController: nil)
+            controller.searchResultsUpdater = self
+            controller.hidesNavigationBarDuringPresentation = false
+            controller.dimsBackgroundDuringPresentation = false
+            controller.searchBar.searchBarStyle = .Minimal
+            controller.searchBar.sizeToFit()
+            self.subjectCourseTable.tableHeaderView = controller.searchBar
+            
+            return controller
+        })()
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    func insertNewObject(sender: AnyObject) {
-        objects.insert(NSDate(), atIndex: 0)
-        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        self.subjectCourseTable.reloadData()
     }
 
     // MARK: - Segues
@@ -42,12 +57,13 @@ class MasterViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
-                let object = objects[indexPath.row] as! NSDate
-            (segue.destinationViewController as! DetailViewController).detailItem = object
+                let subject = subjects[indexPath.row] as! NSDate
+            (segue.destinationViewController as! DetailViewController).detailItem = subject
             }
         }
     }
 
+    /*
     // MARK: - Table View
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -55,30 +71,17 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return objects.count
+        return subjects.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
 
-        let object = objects[indexPath.row] as! NSDate
-        cell.textLabel!.text = object.description
+        let subject = subjects[indexPath.row] as! NSDate
+        cell.textLabel!.text = subject.description
         return cell
     }
-
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            objects.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-        }
-    }
+    */
 
 
 }

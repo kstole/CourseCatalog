@@ -14,6 +14,7 @@
 		BDF3A8C31AEC2CE10036CAA8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDF3A8C21AEC2CE10036CAA8 /* Images.xcassets */; };
 		BDF3A8C61AEC2CE10036CAA8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDF3A8C41AEC2CE10036CAA8 /* LaunchScreen.xib */; };
 		BDF3A8D21AEC2CE10036CAA8 /* CourseCatalogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3A8D11AEC2CE10036CAA8 /* CourseCatalogTests.swift */; };
+		BDF3A8DC1AEC37FD0036CAA8 /* MasterViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3A8DB1AEC37FD0036CAA8 /* MasterViewControllerExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		BDF3A8CB1AEC2CE10036CAA8 /* CourseCatalogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CourseCatalogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDF3A8D01AEC2CE10036CAA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDF3A8D11AEC2CE10036CAA8 /* CourseCatalogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCatalogTests.swift; sourceTree = "<group>"; };
+		BDF3A8DB1AEC37FD0036CAA8 /* MasterViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewControllerExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				BDF3A8B91AEC2CE10036CAA8 /* AppDelegate.swift */,
 				BDF3A8BB1AEC2CE10036CAA8 /* MasterViewController.swift */,
+				BDF3A8DB1AEC37FD0036CAA8 /* MasterViewControllerExtensions.swift */,
 				BDF3A8BD1AEC2CE10036CAA8 /* DetailViewController.swift */,
 				BDF3A8BF1AEC2CE10036CAA8 /* Main.storyboard */,
 				BDF3A8C21AEC2CE10036CAA8 /* Images.xcassets */,
@@ -215,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDF3A8DC1AEC37FD0036CAA8 /* MasterViewControllerExtensions.swift in Sources */,
 				BDF3A8BE1AEC2CE10036CAA8 /* DetailViewController.swift in Sources */,
 				BDF3A8BC1AEC2CE10036CAA8 /* MasterViewController.swift in Sources */,
 				BDF3A8BA1AEC2CE10036CAA8 /* AppDelegate.swift in Sources */,
@@ -413,6 +417,7 @@
 				BDF3A8D71AEC2CE10036CAA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BDF3A8D81AEC2CE10036CAA8 /* Build configuration list for PBXNativeTarget "CourseCatalogTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +426,7 @@
 				BDF3A8DA1AEC2CE10036CAA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
