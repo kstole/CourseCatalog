@@ -19,22 +19,14 @@
             </objects>
             <point key="canvasLocation" x="-148" y="64"/>
         </scene>
-        <!--Master-->
+        <!--Combined-->
         <scene sceneID="VgW-fR-Quf">
             <objects>
-                <tableViewController title="Master" id="pGg-6v-bdr" customClass="MasterViewController" customModule="CourseCatalog" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Combined" id="pGg-6v-bdr" customClass="CombinedViewController" customModule="CourseCatalog" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mLL-gJ-YKr">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="rBs-3e-VED">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="pGg-6v-bdr" id="b16-E8-1ik"/>
-                            </connections>
-                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="2pz-XF-uhl" style="IBUITableViewCellStyleDefault" id="m0d-ak-lc9">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
@@ -54,7 +46,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="Ah7-4n-0Wa" kind="show" identifier="showDetail" id="jUr-3t-vfg"/>
+                                    <segue destination="Ah7-4n-0Wa" kind="show" identifier="masterToCourse" id="jUr-3t-vfg"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -64,17 +56,17 @@
                             <outlet property="delegate" destination="pGg-6v-bdr" id="Y6K-Cp-Qkv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Master" id="tQt-TN-PWz"/>
+                    <navigationItem key="navigationItem" title="Subjects and Courses" id="tQt-TN-PWz"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="Sno-Ql-eHm" id="7Us-Iq-LnG"/>
                         <outlet property="subjectCourseTable" destination="mLL-gJ-YKr" id="lQO-ak-eI6"/>
+                        <segue destination="Ofx-fi-EjM" kind="show" identifier="showSubject" id="Etl-12-StG"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="Sno-Ql-eHm">
                     <connections>
                         <outlet property="delegate" destination="pGg-6v-bdr" id="s5q-mU-GJq"/>
-                        <outlet property="searchBar" destination="rBs-3e-VED" id="zVH-9B-6k3"/>
                         <outlet property="searchContentsController" destination="pGg-6v-bdr" id="bdK-Ha-XQq"/>
                         <outlet property="searchResultsDataSource" destination="pGg-6v-bdr" id="mdQ-uH-G48"/>
                         <outlet property="searchResultsDelegate" destination="pGg-6v-bdr" id="7DS-h5-qba"/>
@@ -83,10 +75,40 @@
             </objects>
             <point key="canvasLocation" x="605" y="64"/>
         </scene>
-        <!--Detail-->
+        <!--Subject-->
+        <scene sceneID="JOQ-uq-HOG">
+            <objects>
+                <tableViewController title="Subject" id="Ofx-fi-EjM" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="QMr-SG-dJg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ytd-Pu-Wfy">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ytd-Pu-Wfy" id="W1A-pT-RgN">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ofx-fi-EjM" id="o5t-0d-4WI"/>
+                            <outlet property="delegate" destination="Ofx-fi-EjM" id="xS9-wz-kQW"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Subject" id="ftR-So-CZt"/>
+                    <connections>
+                        <segue destination="Ah7-4n-0Wa" kind="show" identifier="SubjectToCourse" id="eSh-BX-ZfH"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rna-z3-Pjb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1301" y="64"/>
+        </scene>
+        <!--Course-->
         <scene sceneID="Cn3-H9-jdl">
             <objects>
-                <viewController title="Detail" id="Ah7-4n-0Wa" customClass="CourseViewController" customModule="CourseCatalog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Course" id="Ah7-4n-0Wa" customClass="CourseViewController" customModule="CourseCatalog" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cIm-e0-J51"/>
                         <viewControllerLayoutGuide type="bottom" id="a0L-h9-sNL"/>
@@ -110,14 +132,17 @@
                             <constraint firstAttribute="trailing" secondItem="Lei-5M-9Gs" secondAttribute="trailing" constant="20" symbolic="YES" id="pXB-RP-Zz6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Detail" id="cra-N8-TIN"/>
+                    <navigationItem key="navigationItem" title="Course" id="cra-N8-TIN"/>
                     <connections>
                         <outlet property="detailDescriptionLabel" destination="Lei-5M-9Gs" id="sCT-F7-F6f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1343" y="64"/>
+            <point key="canvasLocation" x="1301" y="862"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="eSh-BX-ZfH"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -1,5 +1,5 @@
 //
-//  ViewControllerExtensions.swift
+//  CombinedViewControllerExtensions.swift
 //  SearchController
 //
 //  Created by Stuart Breckenridge on 17/8/14.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension MasterViewController: UITableViewDataSource {
+extension CombinedViewController: UITableViewDataSource {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (self.subjectCourseSearchController.active) {
             return self.searchArray.count
@@ -34,18 +34,22 @@ extension MasterViewController: UITableViewDataSource {
     }
 }
 
-extension MasterViewController: UITableViewDelegate {
+extension CombinedViewController: UITableViewDelegate {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }
 
-extension MasterViewController: UISearchResultsUpdating {
+extension CombinedViewController: UISearchResultsUpdating {
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         self.searchArray.removeAll(keepCapacity: false)
-     
-        let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text)
-        let array = (self.subjects as NSArray).filteredArrayUsingPredicate(searchPredicate)
-        self.searchArray = array as! [String]
+        
+        if searchController.searchBar.text.isEmpty {
+            self.searchArray = self.subjects
+        } else {
+            let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text)
+            let array = (self.subjects as NSArray).filteredArrayUsingPredicate(searchPredicate)
+            self.searchArray = array as! [String]
+        }
     }
 }

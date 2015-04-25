@@ -1,5 +1,5 @@
 //
-//  DetailViewController.swift
+//  CourseViewController.swift
 //  CourseCatalog
 //
 //  Created by Kyler Stole on 4/25/15.

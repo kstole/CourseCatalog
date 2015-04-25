@@ -1,5 +1,5 @@
 //
-//  MasterViewController.swift
+//  CombinedViewController.swift
 //  CourseCatalog
 //
 //  Created by Kyler Stole on 4/25/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MasterViewController: UITableViewController {
+class CombinedViewController: UITableViewController {
 
     @IBOutlet var subjectCourseTable: UITableView!
     var subjects = ["Computer Science","Electrical & Computer Engineering","Physics","Mathematics"]
@@ -55,7 +55,7 @@ class MasterViewController: UITableViewController {
     // MARK: - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showDetail" {
+        if segue.identifier == "CombinedToCourse" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 let subject = subjects[indexPath.row] as String
             (segue.destinationViewController as! CourseViewController).detailItem = subject
