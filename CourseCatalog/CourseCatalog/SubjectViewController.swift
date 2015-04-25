@@ -1,5 +1,5 @@
 //
-//  CombinedViewController.swift
+//  SubjectViewController.swift
 //  CourseCatalog
 //
 //  Created by Kyler Stole on 4/25/15.
@@ -8,15 +8,28 @@
 
 import UIKit
 
-class CombinedViewController: UITableViewController {
+class SubjectViewController: UITableViewController {
 
-    @IBOutlet var subjectCourseTable: UITableView!
-    var subjects = ["Computer Science","Electrical & Computer Engineering","Physics","Mathematics"]
+    @IBOutlet var courseTable: UITableView!
     var courses = ["CS 160","CS 261"]
     var searchArray:[String] = [String]() {
-        didSet  {self.subjectCourseTable.reloadData()}
+        didSet  {self.courseTable.reloadData()}
     }
     var subjectCourseSearchController = UISearchController()
+    
+    var detailItem: AnyObject? {
+        didSet {
+            // Update the view.
+            self.configureView()
+        }
+    }
+    
+    func configureView() {
+        // Update the user interface for the detail item.
+        if let detail: AnyObject = self.detailItem {
+            self.navigationItem.title = detail.description
+        }
+    }
     
 
     override func awakeFromNib() {
@@ -27,8 +40,8 @@ class CombinedViewController: UITableViewController {
         super.viewDidLoad()
         
         // Configure countryTable
-        self.subjectCourseTable.delegate = self
-        self.subjectCourseTable.dataSource = self
+        self.courseTable.delegate = self
+        self.courseTable.dataSource = self
         
         // Configure countrySearchController
         self.subjectCourseSearchController = ({
@@ -41,31 +54,25 @@ class CombinedViewController: UITableViewController {
             controller.dimsBackgroundDuringPresentation = false
             controller.searchBar.searchBarStyle = .Minimal
             controller.searchBar.sizeToFit()
-            self.subjectCourseTable.tableHeaderView = controller.searchBar
+            self.courseTable.tableHeaderView = controller.searchBar
             
             return controller
         })()
         
+        self.configureView()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
-        self.subjectCourseTable.reloadData()
+        self.courseTable.reloadData()
     }
 
     // MARK: - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "CombinedToSubject" {
-            if let indexPath = self.tableView.indexPathForSelectedRow() {
-                let subject = subjects[indexPath.row] as String
-                (segue.destinationViewController as! SubjectViewController).detailItem = subject
-            }
-        } else if segue.identifier == "CombinedToCourse" {
-            if let indexPath = self.tableView.indexPathForSelectedRow() {
-                let course = courses[indexPath.row] as String
-                (segue.destinationViewController as! CourseViewController).detailItem = course
-            }
+        if let indexPath = self.tableView.indexPathForSelectedRow() {
+            let course = courses[indexPath.row] as String
+            (segue.destinationViewController as! CourseViewController).detailItem = course
         }
     }
 

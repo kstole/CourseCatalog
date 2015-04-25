@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2499CBEB62FD3437579B3E63 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F40001EC0C99207B13F02274 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		BD4445951AEC5D570078A673 /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4445931AEC5D570078A673 /* SubjectViewController.swift */; };
+		BD4445961AEC5D570078A673 /* SubjectViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4445941AEC5D570078A673 /* SubjectViewControllerExtensions.swift */; };
 		BD9ED7361AEC4314005105A0 /* UiColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9ED7351AEC4314005105A0 /* UiColorExtension.swift */; };
 		BDE1DB141AEC4FCC0059A280 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BDE1DB131AEC4FCC0059A280 /* Podfile */; };
 		BDF3A8BA1AEC2CE10036CAA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3A8B91AEC2CE10036CAA8 /* AppDelegate.swift */; };
@@ -33,6 +35,8 @@
 /* Begin PBXFileReference section */
 		3316A59815238E8AB23C9343 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		70FF6AA3560363ADAA14AB78 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		BD4445931AEC5D570078A673 /* SubjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
+		BD4445941AEC5D570078A673 /* SubjectViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectViewControllerExtensions.swift; sourceTree = "<group>"; };
 		BD9ED7351AEC4314005105A0 /* UiColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiColorExtension.swift; sourceTree = "<group>"; };
 		BDE1DB131AEC4FCC0059A280 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BDF3A8B41AEC2CE10036CAA8 /* CourseCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CourseCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +109,8 @@
 				BDF3A8B91AEC2CE10036CAA8 /* AppDelegate.swift */,
 				BDF3A8BB1AEC2CE10036CAA8 /* CombinedViewController.swift */,
 				BDF3A8DB1AEC37FD0036CAA8 /* CombinedViewControllerExtensions.swift */,
+				BD4445931AEC5D570078A673 /* SubjectViewController.swift */,
+				BD4445941AEC5D570078A673 /* SubjectViewControllerExtensions.swift */,
 				BDF3A8BD1AEC2CE10036CAA8 /* CourseViewController.swift */,
 				BD9ED7351AEC4314005105A0 /* UiColorExtension.swift */,
 				BDF3A8BF1AEC2CE10036CAA8 /* Main.storyboard */,
@@ -301,7 +307,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDF3A8DC1AEC37FD0036CAA8 /* CombinedViewControllerExtensions.swift in Sources */,
+				BD4445951AEC5D570078A673 /* SubjectViewController.swift in Sources */,
 				BDF3A8BE1AEC2CE10036CAA8 /* CourseViewController.swift in Sources */,
+				BD4445961AEC5D570078A673 /* SubjectViewControllerExtensions.swift in Sources */,
 				BD9ED7361AEC4314005105A0 /* UiColorExtension.swift in Sources */,
 				BDF3A8BC1AEC2CE10036CAA8 /* CombinedViewController.swift in Sources */,
 				BDF3A8BA1AEC2CE10036CAA8 /* AppDelegate.swift in Sources */,

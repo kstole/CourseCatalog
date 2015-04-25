@@ -59,6 +59,11 @@ extension CombinedViewController: UITableViewDataSource {
 extension CombinedViewController: UITableViewDelegate {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        if indexPath.section == 0 {
+            self.performSegueWithIdentifier("CombinedToSubject", sender: self)
+        } else {
+            self.performSegueWithIdentifier("CombinedToCourse", sender: self)
+        }
     }
 }
 
