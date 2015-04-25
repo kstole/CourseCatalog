@@ -57,31 +57,11 @@ class MasterViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
-                let subject = subjects[indexPath.row] as! NSDate
+                let subject = subjects[indexPath.row] as String
             (segue.destinationViewController as! DetailViewController).detailItem = subject
             }
         }
     }
-
-    /*
-    // MARK: - Table View
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return subjects.count
-    }
-
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
-
-        let subject = subjects[indexPath.row] as! NSDate
-        cell.textLabel!.text = subject.description
-        return cell
-    }
-    */
 
 
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD9ED7361AEC4314005105A0 /* UiColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9ED7351AEC4314005105A0 /* UiColorExtension.swift */; };
 		BDF3A8BA1AEC2CE10036CAA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3A8B91AEC2CE10036CAA8 /* AppDelegate.swift */; };
 		BDF3A8BC1AEC2CE10036CAA8 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3A8BB1AEC2CE10036CAA8 /* MasterViewController.swift */; };
 		BDF3A8BE1AEC2CE10036CAA8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3A8BD1AEC2CE10036CAA8 /* DetailViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BD9ED7351AEC4314005105A0 /* UiColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiColorExtension.swift; sourceTree = "<group>"; };
 		BDF3A8B41AEC2CE10036CAA8 /* CourseCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CourseCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDF3A8B81AEC2CE10036CAA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDF3A8B91AEC2CE10036CAA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				BDF3A8BB1AEC2CE10036CAA8 /* MasterViewController.swift */,
 				BDF3A8DB1AEC37FD0036CAA8 /* MasterViewControllerExtensions.swift */,
 				BDF3A8BD1AEC2CE10036CAA8 /* DetailViewController.swift */,
+				BD9ED7351AEC4314005105A0 /* UiColorExtension.swift */,
 				BDF3A8BF1AEC2CE10036CAA8 /* Main.storyboard */,
 				BDF3A8C21AEC2CE10036CAA8 /* Images.xcassets */,
 				BDF3A8C41AEC2CE10036CAA8 /* LaunchScreen.xib */,
@@ -220,6 +223,7 @@
 			files = (
 				BDF3A8DC1AEC37FD0036CAA8 /* MasterViewControllerExtensions.swift in Sources */,
 				BDF3A8BE1AEC2CE10036CAA8 /* DetailViewController.swift in Sources */,
+				BD9ED7361AEC4314005105A0 /* UiColorExtension.swift in Sources */,
 				BDF3A8BC1AEC2CE10036CAA8 /* MasterViewController.swift in Sources */,
 				BDF3A8BA1AEC2CE10036CAA8 /* AppDelegate.swift in Sources */,
 			);

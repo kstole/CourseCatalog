@@ -26,6 +26,7 @@ class DetailViewController: UIViewController {
             if let label = self.detailDescriptionLabel {
                 label.text = detail.description
             }
+            self.navigationItem.title = detail.description
         }
     }
 
