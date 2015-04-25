@@ -10,11 +10,23 @@ import Foundation
 import UIKit
 
 extension CombinedViewController: UITableViewDataSource {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        if (self.subjectCourseSearchController.active) {
+            return 1
+        } else {
+            return 2
+        }
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (self.subjectCourseSearchController.active) {
             return self.searchArray.count
         } else {
-            return self.subjects.count
+            if section == 0 {
+                return self.subjects.count
+            } else {
+                return self.courses.count
+            }
         }
     }
     
@@ -24,13 +36,23 @@ extension CombinedViewController: UITableViewDataSource {
         if (self.subjectCourseSearchController.active) {
             cell.textLabel?.text! = self.searchArray[indexPath.row]
             return cell
-        }
-        
-        else
-        {
-            cell.textLabel?.text! = self.subjects[indexPath.row]
+        } else {
+            if indexPath.section == 0 {
+                cell.textLabel?.text! = self.subjects[indexPath.row]
+            } else {
+                cell.textLabel?.text! = self.courses[indexPath.row]
+            }
             return cell
         }
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "Subjects"
+        } else if section == 1 {
+            return "Courses"
+        }
+        return nil;
     }
 }
 

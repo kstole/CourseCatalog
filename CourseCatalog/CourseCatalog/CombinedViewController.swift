@@ -12,6 +12,7 @@ class CombinedViewController: UITableViewController {
 
     @IBOutlet var subjectCourseTable: UITableView!
     var subjects = ["Computer Science","Electrical & Computer Engineering","Physics","Mathematics"]
+    var courses = ["CS 160","CS 261"]
     var searchArray:[String] = [String]() {
         didSet  {self.subjectCourseTable.reloadData()}
     }
