@@ -58,7 +58,7 @@ class MasterViewController: UITableViewController {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 let subject = subjects[indexPath.row] as String
-            (segue.destinationViewController as! DetailViewController).detailItem = subject
+            (segue.destinationViewController as! CourseViewController).detailItem = subject
             }
         }
     }
