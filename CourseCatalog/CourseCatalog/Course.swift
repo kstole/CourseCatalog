@@ -13,9 +13,10 @@ class Course {
     var name: String = "Unknown Course"
     var id: String = ""
     
-    var profRating: Float = 0.0
+    var profRating: String = "0.0"
     
-    var OSUBooksPrice: Float = 0.0
+    var OSUBooksPrice: String = "0.0"
+    
     
     var major: Major?
     

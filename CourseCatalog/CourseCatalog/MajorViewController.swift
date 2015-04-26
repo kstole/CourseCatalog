@@ -51,8 +51,8 @@ class MajorViewController: UITableViewController {
                     crs.number = course["class_num"].stringValue
                     crs.name = course["class_name"].stringValue
                     crs.id = course["class_id"].stringValue
-                    crs.profRating = (course["professor_rating"].stringValue as NSString).floatValue
-                    crs.OSUBooksPrice = (course["osu_textbook_total"].stringValue as NSString).floatValue
+                    crs.profRating = course["professor_rating"].stringValue
+                    crs.OSUBooksPrice = course["osu_textbook_total"].stringValue
                     if let major = self.detailItem as? Major {
                         crs.major = major
                     }

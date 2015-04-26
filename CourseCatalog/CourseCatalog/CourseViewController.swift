@@ -165,10 +165,13 @@ class CourseViewController: UITableViewController, CLLocationManagerDelegate, UI
     
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+        
         println("size-transition")
         if let mapView = self.map.subviews[0] as? GMSMapView {
             println("subview bounds change")
             mapView.frame = self.map.bounds
+            
+            self.tableView.reloadData()
         }
     }
 
