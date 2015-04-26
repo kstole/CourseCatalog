@@ -44,40 +44,38 @@ class CourseViewController: UITableViewController, CLLocationManagerDelegate  {
     
     func configureView() {
         // Update the user interface for the detail item.
-        if let detail: AnyObject = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.description
+        if let course: Course = self.detailItem as? Course, major = course.major {
+            self.navigationItem.title = major.name
+            //self.course_name.text = course.name
+            
+            NetworkManager.getClassDetailsWithId(course.id) { (json) -> Void in
+                println(json)
+                
+                self.course_name.text = json["class_name"].stringValue
+                
+                self.course_time.text = json["days_of_week"].stringValue + " " + json["start_time"].stringValue + "-" + json["end_time"].stringValue
+                
+                self.prof_name.text = json["professor"]["first_name"].stringValue + " " + json["professor"]["last_name"].stringValue
+                
+                self.prov_avg_rtg.text = json["professor"]["rating"].stringValue
+                
+                self.course_description.text = json["description"].stringValue
+                self.dstLat = (json["lat"].stringValue as NSString).doubleValue
+                self.dstLon = (json["lon"].stringValue as NSString).doubleValue
+                self.initializeMaps(self.dstLat, lon: self.dstLon)
+                self.tableView.reloadData()
             }
-            self.navigationItem.title = detail.description
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.configureView()
         
         tableView.estimatedRowHeight = 44.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        NetworkManager.getClassDetailsWithId("25") { (json) -> Void in
-            println(json)
-            
-            self.course_name.text = json["class_name"].stringValue
-
-            self.course_time.text = json["days_of_week"].stringValue + " " + json["start_time"].stringValue + "-" + json["end_time"].stringValue
-            
-            self.prof_name.text = json["professor"]["first_name"].stringValue + " " + json["professor"]["last_name"].stringValue
-            
-            self.prov_avg_rtg.text = json["professor"]["rating"].stringValue
-            
-            self.course_description.text = json["description"].stringValue
-            self.dstLat = (json["lat"].stringValue as NSString).doubleValue
-            self.dstLon = (json["lon"].stringValue as NSString).doubleValue
-            self.initializeMaps(self.dstLat, lon: self.dstLon)
-            self.tableView.reloadData()
-            
-        }
+        //self.configureView()
     }
     
     
@@ -89,11 +87,6 @@ class CourseViewController: UITableViewController, CLLocationManagerDelegate  {
         
         
         //initializeMaps(lat, lon: lon)
-        
-        
-        
-        
-        
     }
 
     override func didReceiveMemoryWarning() {

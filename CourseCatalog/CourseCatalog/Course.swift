@@ -17,6 +17,8 @@ class Course {
     
     var OSUBooksPrice: Float = 0.0
     
+    var major: Major?
+    
 //    init(_ number: String, _ name: String) {
 //        self.number = number
 //        self.name = name
