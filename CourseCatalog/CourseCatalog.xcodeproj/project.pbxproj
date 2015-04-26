@@ -10,6 +10,8 @@
 		2499CBEB62FD3437579B3E63 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F40001EC0C99207B13F02274 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		BD4445951AEC5D570078A673 /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4445931AEC5D570078A673 /* SubjectViewController.swift */; };
 		BD4445961AEC5D570078A673 /* SubjectViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4445941AEC5D570078A673 /* SubjectViewControllerExtensions.swift */; };
+		BD604FEB1AEC7258000F8848 /* JSONHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD604FEA1AEC7258000F8848 /* JSONHandler.swift */; };
+		BD604FED1AEC7260000F8848 /* ClassList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD604FEC1AEC7260000F8848 /* ClassList.swift */; };
 		BD9ED7361AEC4314005105A0 /* UiColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9ED7351AEC4314005105A0 /* UiColorExtension.swift */; };
 		BDE1DB141AEC4FCC0059A280 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BDE1DB131AEC4FCC0059A280 /* Podfile */; };
 		BDF3A8BA1AEC2CE10036CAA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3A8B91AEC2CE10036CAA8 /* AppDelegate.swift */; };
@@ -38,6 +40,8 @@
 		70FF6AA3560363ADAA14AB78 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BD4445931AEC5D570078A673 /* SubjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
 		BD4445941AEC5D570078A673 /* SubjectViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectViewControllerExtensions.swift; sourceTree = "<group>"; };
+		BD604FEA1AEC7258000F8848 /* JSONHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONHandler.swift; sourceTree = "<group>"; };
+		BD604FEC1AEC7260000F8848 /* ClassList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassList.swift; sourceTree = "<group>"; };
 		BD9ED7351AEC4314005105A0 /* UiColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiColorExtension.swift; sourceTree = "<group>"; };
 		BDE1DB131AEC4FCC0059A280 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BDF3A8B41AEC2CE10036CAA8 /* CourseCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CourseCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +88,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		BD604FF01AEC7324000F8848 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BD604FEA1AEC7258000F8848 /* JSONHandler.swift */,
+				BD604FEC1AEC7260000F8848 /* ClassList.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		BDC552001AEC767700FB1223 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BD9ED7351AEC4314005105A0 /* UiColorExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		BDF3A8AB1AEC2CE10036CAA8 = {
 			isa = PBXGroup;
 			children = (
@@ -109,13 +130,13 @@
 			isa = PBXGroup;
 			children = (
 				BDF3A8B91AEC2CE10036CAA8 /* AppDelegate.swift */,
+				BD604FF01AEC7324000F8848 /* Models */,
 				BDF3A8BB1AEC2CE10036CAA8 /* CombinedViewController.swift */,
 				BDF3A8DB1AEC37FD0036CAA8 /* CombinedViewControllerExtensions.swift */,
 				BD4445931AEC5D570078A673 /* SubjectViewController.swift */,
 				BD4445941AEC5D570078A673 /* SubjectViewControllerExtensions.swift */,
 				BDF3A8BD1AEC2CE10036CAA8 /* CourseViewController.swift */,
-				BD9ED7351AEC4314005105A0 /* UiColorExtension.swift */,
-				BE7026D01AEC755C00EE0968 /* NetworkManager.swift */,
+				BDC552001AEC767700FB1223 /* Extensions */,
 				BDF3A8BF1AEC2CE10036CAA8 /* Main.storyboard */,
 				BDF3A8C21AEC2CE10036CAA8 /* Images.xcassets */,
 				BDF3A8C41AEC2CE10036CAA8 /* LaunchScreen.xib */,
@@ -209,6 +230,7 @@
 				TargetAttributes = {
 					BDF3A8B31AEC2CE10036CAA8 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = XHYE9DWSBD;
 					};
 					BDF3A8CA1AEC2CE10036CAA8 = {
 						CreatedOnToolsVersion = 6.3;
@@ -313,7 +335,8 @@
 				BD4445951AEC5D570078A673 /* SubjectViewController.swift in Sources */,
 				BDF3A8BE1AEC2CE10036CAA8 /* CourseViewController.swift in Sources */,
 				BD4445961AEC5D570078A673 /* SubjectViewControllerExtensions.swift in Sources */,
-				BE7026D11AEC755C00EE0968 /* NetworkManager.swift in Sources */,
+				BD604FEB1AEC7258000F8848 /* JSONHandler.swift in Sources */,
+				BD604FED1AEC7260000F8848 /* ClassList.swift in Sources */,
 				BD9ED7361AEC4314005105A0 /* UiColorExtension.swift in Sources */,
 				BDF3A8BC1AEC2CE10036CAA8 /* CombinedViewController.swift in Sources */,
 				BDF3A8BA1AEC2CE10036CAA8 /* AppDelegate.swift in Sources */,
@@ -444,9 +467,12 @@
 			baseConfigurationReference = 70FF6AA3560363ADAA14AB78 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = CourseCatalog/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -455,9 +481,12 @@
 			baseConfigurationReference = 3316A59815238E8AB23C9343 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = CourseCatalog/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
