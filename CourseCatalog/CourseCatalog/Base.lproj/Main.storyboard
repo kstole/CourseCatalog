@@ -166,7 +166,7 @@
                             <outlet property="delegate" destination="pGg-6v-bdr" id="Y6K-Cp-Qkv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Majors and Courses" id="tQt-TN-PWz">
+                    <navigationItem key="navigationItem" title="Majors" id="tQt-TN-PWz">
                         <barButtonItem key="backBarButtonItem" title="All" id="t8W-Si-85J"/>
                     </navigationItem>
                     <connections>
