@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -212,7 +212,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Eh-Jc-dkV">
-                                            <rect key="frame" x="45" y="11" width="547" height="21"/>
+                                            <rect key="frame" x="45" y="11" width="106" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="p9u-jN-LTf"/>
                                                 <constraint firstAttribute="width" constant="200" id="yhD-Gt-IpI"/>
@@ -226,18 +226,37 @@
                                                 </mask>
                                             </variation>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rating" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDk-2y-cSe">
+                                            <rect key="frame" x="568" y="8" width="32" height="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1I-mU-jxM">
+                                            <rect key="frame" x="572" y="20" width="28" height="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="q1I-mU-jxM" firstAttribute="bottom" secondItem="W1A-pT-RgN" secondAttribute="bottomMargin" id="FSL-WP-b7A"/>
+                                        <constraint firstItem="q1I-mU-jxM" firstAttribute="trailing" secondItem="W1A-pT-RgN" secondAttribute="trailingMargin" constant="8" id="Ryc-J5-Oqz"/>
+                                        <constraint firstItem="q1I-mU-jxM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0Eh-Jc-dkV" secondAttribute="trailing" id="XZC-Zf-iDo"/>
+                                        <constraint firstItem="BDk-2y-cSe" firstAttribute="top" secondItem="W1A-pT-RgN" secondAttribute="topMargin" id="dvp-xt-ETm"/>
                                         <constraint firstItem="Z41-lb-sQG" firstAttribute="leading" secondItem="W1A-pT-RgN" secondAttribute="leadingMargin" constant="-8" id="i3m-6N-7mv"/>
                                         <constraint firstAttribute="centerY" secondItem="0Eh-Jc-dkV" secondAttribute="centerY" id="jCc-tq-7dF"/>
+                                        <constraint firstItem="BDk-2y-cSe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0Eh-Jc-dkV" secondAttribute="trailing" id="lzo-dq-M4V"/>
+                                        <constraint firstItem="BDk-2y-cSe" firstAttribute="trailing" secondItem="W1A-pT-RgN" secondAttribute="trailingMargin" constant="8" id="qmj-XH-Awi"/>
                                         <constraint firstItem="0Eh-Jc-dkV" firstAttribute="leading" secondItem="W1A-pT-RgN" secondAttribute="leadingMargin" constant="37" id="v9n-lG-fmc"/>
                                         <constraint firstAttribute="centerY" secondItem="Z41-lb-sQG" secondAttribute="centerY" constant="-0.5" id="xs5-Dt-MgU"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="0Eh-Jc-dkV" secondAttribute="trailing" id="zLG-Ic-DhP"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="courseName" destination="0Eh-Jc-dkV" id="GGe-er-I4z"/>
                                     <outlet property="courseNum" destination="Z41-lb-sQG" id="BhO-VU-TMk"/>
+                                    <outlet property="price" destination="q1I-mU-jxM" id="FBa-Cz-oi0"/>
+                                    <outlet property="rating" destination="BDk-2y-cSe" id="t59-PT-5KH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
