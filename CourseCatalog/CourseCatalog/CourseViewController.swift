@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class CourseViewController: UITableViewController {
     
@@ -18,6 +19,9 @@ class CourseViewController: UITableViewController {
     @IBOutlet weak var prof_helpful: UILabel!
     @IBOutlet weak var prof_easy: UILabel!
     @IBOutlet weak var prof_clarity: UILabel!
+    
+    @IBOutlet weak var map: UIView!
+    //var mapView : GMSMapView!
     
     @IBOutlet weak var course_description_cell: UITableViewCell!
 
@@ -59,12 +63,31 @@ class CourseViewController: UITableViewController {
         self.course_description.sizeToFit()
         self.course_time.sizeToFit()
         
-        self.tableView.reloadData()
+        initializeMaps(41.0136, lon: 28.9550)
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func initializeMaps(lat:Double, lon:Double) {
+        var camera = GMSCameraPosition.cameraWithLatitude(lat,longitude:lon, zoom:6)
+        var mapView = GMSMapView.mapWithFrame(CGRectZero, camera:camera)
+        
+        var marker = GMSMarker()
+        marker.position = camera.target
+        marker.snippet = "Your Destination"
+        marker.appearAnimation = kGMSMarkerAnimationPop
+        marker.map = mapView
+        //self.map.addSubview(mapView)
+        mapView.frame = self.map.bounds
+        self.map.addSubview(mapView)
+        
+        //self.map = mapView
     }
 
 
