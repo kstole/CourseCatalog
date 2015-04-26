@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class CombinedViewController: UITableViewController {
 
@@ -25,6 +26,10 @@ class CombinedViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NetworkManager.getMajors({ (json: JSON) -> Void in
+            println(json)
+        })
         
         // Configure countryTable
         self.subjectCourseTable.delegate = self

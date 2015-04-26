@@ -8,15 +8,16 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class NetworkManager {
-    let url = "http://54.213.102.221:80"
+    static let url = "http://54.213.102.221:80"
     
-//    func getMajors() -> [Dictionary<String, String>] {
-//        Alamofire.request(.GET, url + "/majors/")
-//                 .response { (request, response, data, error) in
-//                    
-//                    
-//                            }
-//    }
+    class func getMajors(callback:(JSON) -> Void) -> Void {
+        Alamofire.request(.GET, "\(url)/majors/")
+                 .responseJSON { (_, _, response, _) in
+                    var json = JSON(response!)
+                    callback(json)
+                 }
+    }
 }
