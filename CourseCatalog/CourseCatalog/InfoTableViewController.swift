@@ -1,15 +1,15 @@
 //
-//  CourseViewController.swift
+//  InfoTableViewController.swift
 //  CourseCatalog
 //
-//  Created by Kyler Stole on 4/25/15.
+//  Created by Gungor Basa on 4/25/15.
 //  Copyright (c) 2015 Kyler Stole. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class CourseViewController: UITableViewController {
-    
+class InfoTableViewController:UITableViewController {
     @IBOutlet weak var course_name: UILabel!
     @IBOutlet weak var course_description: UILabel!
     @IBOutlet weak var course_time: UILabel!
@@ -20,34 +20,17 @@ class CourseViewController: UITableViewController {
     @IBOutlet weak var prof_clarity: UILabel!
     
     @IBOutlet weak var course_description_cell: UITableViewCell!
-
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
-
-
-    var detailItem: AnyObject? {
-        didSet {
-            // Update the view.
-            self.configureView()
-        }
-    }
-
-    func configureView() {
-        // Update the user interface for the detail item.
-        if let detail: AnyObject = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.description
-            }
-            self.navigationItem.title = detail.description
-        }
-    }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.configureView()
-        
+        self.navigationItem.title = "Class ID"
         tableView.estimatedRowHeight = 44.0
         tableView.rowHeight = UITableViewAutomaticDimension
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -60,13 +43,9 @@ class CourseViewController: UITableViewController {
         self.course_time.sizeToFit()
         
         self.tableView.reloadData()
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
+    
+    
 }
-
