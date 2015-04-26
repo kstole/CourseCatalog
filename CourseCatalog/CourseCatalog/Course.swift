@@ -11,7 +11,7 @@ import Foundation
 class Course {
     var number: Int?
     var name: String?
-    var subject: Subject?
+    var major: Major?
     
     var profRating: Float?
     

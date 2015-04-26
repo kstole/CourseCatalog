@@ -1,5 +1,5 @@
 //
-//  Subject.swift
+//  Major.swift
 //  CourseCatalog
 //
 //  Created by Kyler Stole on 4/25/15.
@@ -8,7 +8,11 @@
 
 import Foundation
 
-class Subject {
-    var name: String?
+class Major {
+    var name: String = "Unknown Major"
     var department: String?
+    
+    init(_ name: String) {
+        self.name = name
+    }
 }

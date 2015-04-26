@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2499CBEB62FD3437579B3E63 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F40001EC0C99207B13F02274 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		BD4445951AEC5D570078A673 /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4445931AEC5D570078A673 /* SubjectViewController.swift */; };
-		BD4445961AEC5D570078A673 /* SubjectViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4445941AEC5D570078A673 /* SubjectViewControllerExtensions.swift */; };
+		BD4445951AEC5D570078A673 /* MajorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4445931AEC5D570078A673 /* MajorViewController.swift */; };
+		BD4445961AEC5D570078A673 /* MajorViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4445941AEC5D570078A673 /* MajorViewControllerExtensions.swift */; };
 		BD604FEB1AEC7258000F8848 /* JSONHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD604FEA1AEC7258000F8848 /* JSONHandler.swift */; };
 		BD604FED1AEC7260000F8848 /* ClassList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD604FEC1AEC7260000F8848 /* ClassList.swift */; };
 		BD9ED7361AEC4314005105A0 /* UiColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9ED7351AEC4314005105A0 /* UiColorExtension.swift */; };
@@ -24,7 +24,6 @@
 		BDF3A8C61AEC2CE10036CAA8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDF3A8C41AEC2CE10036CAA8 /* LaunchScreen.xib */; };
 		BDF3A8D21AEC2CE10036CAA8 /* CourseCatalogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3A8D11AEC2CE10036CAA8 /* CourseCatalogTests.swift */; };
 		BDF3A8DC1AEC37FD0036CAA8 /* CombinedViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3A8DB1AEC37FD0036CAA8 /* CombinedViewControllerExtensions.swift */; };
-		BE7026D31AEC7A1800EE0968 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7026D21AEC7A1800EE0968 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,18 +39,18 @@
 /* Begin PBXFileReference section */
 		3316A59815238E8AB23C9343 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		70FF6AA3560363ADAA14AB78 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		BD4445931AEC5D570078A673 /* SubjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
-		BD4445941AEC5D570078A673 /* SubjectViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectViewControllerExtensions.swift; sourceTree = "<group>"; };
+		BD4445931AEC5D570078A673 /* MajorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MajorViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		BD4445941AEC5D570078A673 /* MajorViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MajorViewControllerExtensions.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		BD604FEA1AEC7258000F8848 /* JSONHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONHandler.swift; sourceTree = "<group>"; };
 		BD604FEC1AEC7260000F8848 /* ClassList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassList.swift; sourceTree = "<group>"; };
 		BD9ED7351AEC4314005105A0 /* UiColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiColorExtension.swift; sourceTree = "<group>"; };
-		BDC552021AEC774100FB1223 /* Subject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
-		BDC552041AEC778700FB1223 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		BDC552021AEC774100FB1223 /* Subject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Subject.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		BDC552041AEC778700FB1223 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Course.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		BDE1DB131AEC4FCC0059A280 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BDF3A8B41AEC2CE10036CAA8 /* CourseCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CourseCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDF3A8B81AEC2CE10036CAA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDF3A8B91AEC2CE10036CAA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BDF3A8BB1AEC2CE10036CAA8 /* CombinedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedViewController.swift; sourceTree = "<group>"; };
+		BDF3A8BB1AEC2CE10036CAA8 /* CombinedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CombinedViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		BDF3A8BD1AEC2CE10036CAA8 /* CourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
 		BDF3A8C01AEC2CE10036CAA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BDF3A8C21AEC2CE10036CAA8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -59,8 +58,7 @@
 		BDF3A8CB1AEC2CE10036CAA8 /* CourseCatalogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CourseCatalogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDF3A8D01AEC2CE10036CAA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDF3A8D11AEC2CE10036CAA8 /* CourseCatalogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCatalogTests.swift; sourceTree = "<group>"; };
-		BDF3A8DB1AEC37FD0036CAA8 /* CombinedViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombinedViewControllerExtensions.swift; sourceTree = "<group>"; };
-		BE7026D21AEC7A1800EE0968 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		BDF3A8DB1AEC37FD0036CAA8 /* CombinedViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CombinedViewControllerExtensions.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		F40001EC0C99207B13F02274 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -143,12 +141,12 @@
 			isa = PBXGroup;
 			children = (
 				BDF3A8B91AEC2CE10036CAA8 /* AppDelegate.swift */,
+				BDC552011AEC76F200FB1223 /* Objects */,
 				BD604FF01AEC7324000F8848 /* Models */,
 				BDF3A8BB1AEC2CE10036CAA8 /* CombinedViewController.swift */,
-				BDC552011AEC76F200FB1223 /* Objects */,
 				BDF3A8DB1AEC37FD0036CAA8 /* CombinedViewControllerExtensions.swift */,
-				BD4445931AEC5D570078A673 /* SubjectViewController.swift */,
-				BD4445941AEC5D570078A673 /* SubjectViewControllerExtensions.swift */,
+				BD4445931AEC5D570078A673 /* MajorViewController.swift */,
+				BD4445941AEC5D570078A673 /* MajorViewControllerExtensions.swift */,
 				BDF3A8BD1AEC2CE10036CAA8 /* CourseViewController.swift */,
 				BE7026D21AEC7A1800EE0968 /* NetworkManager.swift */,
 				BDC552001AEC767700FB1223 /* Extensions */,
@@ -349,9 +347,9 @@
 				BE7026D31AEC7A1800EE0968 /* NetworkManager.swift in Sources */,
 				BDF3A8DC1AEC37FD0036CAA8 /* CombinedViewControllerExtensions.swift in Sources */,
 				BDC552051AEC778700FB1223 /* Course.swift in Sources */,
-				BD4445951AEC5D570078A673 /* SubjectViewController.swift in Sources */,
+				BD4445951AEC5D570078A673 /* MajorViewController.swift in Sources */,
 				BDF3A8BE1AEC2CE10036CAA8 /* CourseViewController.swift in Sources */,
-				BD4445961AEC5D570078A673 /* SubjectViewControllerExtensions.swift in Sources */,
+				BD4445961AEC5D570078A673 /* MajorViewControllerExtensions.swift in Sources */,
 				BD604FEB1AEC7258000F8848 /* JSONHandler.swift in Sources */,
 				BD604FED1AEC7260000F8848 /* ClassList.swift in Sources */,
 				BDC552031AEC774100FB1223 /* Subject.swift in Sources */,
