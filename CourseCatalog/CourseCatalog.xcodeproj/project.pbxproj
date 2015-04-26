@@ -148,6 +148,7 @@
 				BD4445931AEC5D570078A673 /* MajorViewController.swift */,
 				BD4445941AEC5D570078A673 /* MajorViewControllerExtensions.swift */,
 				BDF3A8BD1AEC2CE10036CAA8 /* CourseViewController.swift */,
+				BE7026D21AEC7A1800EE0968 /* NetworkManager.swift */,
 				BDC552001AEC767700FB1223 /* Extensions */,
 				BDF3A8BF1AEC2CE10036CAA8 /* Main.storyboard */,
 				BDF3A8C21AEC2CE10036CAA8 /* Images.xcassets */,
@@ -242,7 +243,7 @@
 				TargetAttributes = {
 					BDF3A8B31AEC2CE10036CAA8 = {
 						CreatedOnToolsVersion = 6.3;
-						DevelopmentTeam = XHYE9DWSBD;
+						DevelopmentTeam = 6QBR52NJ4V;
 					};
 					BDF3A8CA1AEC2CE10036CAA8 = {
 						CreatedOnToolsVersion = 6.3;
@@ -343,6 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE7026D31AEC7A1800EE0968 /* NetworkManager.swift in Sources */,
 				BDF3A8DC1AEC37FD0036CAA8 /* CombinedViewControllerExtensions.swift in Sources */,
 				BDC552051AEC778700FB1223 /* Course.swift in Sources */,
 				BD4445951AEC5D570078A673 /* MajorViewController.swift in Sources */,
