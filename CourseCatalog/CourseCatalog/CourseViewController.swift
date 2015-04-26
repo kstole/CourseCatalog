@@ -64,6 +64,7 @@ class CourseViewController: UITableViewController {
         self.course_time.sizeToFit()
         
         initializeMaps(41.0136, lon: 28.9550)
+        tableView.reloadData()
         
         
         
