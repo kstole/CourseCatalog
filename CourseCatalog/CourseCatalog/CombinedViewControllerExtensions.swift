@@ -23,7 +23,7 @@ extension CombinedViewController: UITableViewDataSource {
             return self.searchArray.count
         } else {
             if section == 0 {
-                return self.subjects.count
+                return self.majors.count
             } else {
                 return self.courses.count
             }
@@ -31,14 +31,14 @@ extension CombinedViewController: UITableViewDataSource {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = self.subjectCourseTable.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
+        var cell = self.majorCourseTable.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
         
         if (self.combinedSearchController.active) {
             cell.textLabel?.text! = self.searchArray[indexPath.row]
             return cell
         } else {
             if indexPath.section == 0 {
-                cell.textLabel?.text! = self.subjects[indexPath.row]
+                cell.textLabel?.text! = self.majors[indexPath.row]
             } else {
                 cell.textLabel?.text! = self.courses[indexPath.row]
             }
@@ -48,7 +48,7 @@ extension CombinedViewController: UITableViewDataSource {
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
-            return "Subjects"
+            return "Majors"
         } else if section == 1 {
             return "Courses"
         }
@@ -61,7 +61,7 @@ extension CombinedViewController: UITableViewDelegate {
         self.combinedSearchController.dismissViewControllerAnimated(false, completion: nil)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if indexPath.section == 0 {
-            self.performSegueWithIdentifier("CombinedToSubject", sender: indexPath)
+            self.performSegueWithIdentifier("CombinedToMajor", sender: indexPath)
         } else {
             self.performSegueWithIdentifier("CombinedToCourse", sender: indexPath)
         }
@@ -73,10 +73,10 @@ extension CombinedViewController: UISearchResultsUpdating {
         self.searchArray.removeAll(keepCapacity: false)
         
         if searchController.searchBar.text.isEmpty {
-            self.searchArray = self.subjects
+            self.searchArray = self.majors
         } else {
             let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text)
-            let array = (self.subjects as NSArray).filteredArrayUsingPredicate(searchPredicate)
+            let array = (self.majors as NSArray).filteredArrayUsingPredicate(searchPredicate)
             self.searchArray = array as! [String]
         }
     }

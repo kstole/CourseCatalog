@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D91BD40E-D8BF-42DD-8C91-24333C5C9A39</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CourseCatalog</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>0DC053DDA00AFCFAE251F304D1529FAFB12F20AD</key>
+		<string>https://github.com/kstole/CourseCatalog</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CourseCatalog/CourseCatalog.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>0DC053DDA00AFCFAE251F304D1529FAFB12F20AD</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/kstole/CourseCatalog</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>0DC053DDA00AFCFAE251F304D1529FAFB12F20AD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0DC053DDA00AFCFAE251F304D1529FAFB12F20AD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CourseCatalog</string>
+		</dict>
+	</array>
+</dict>
+</plist>

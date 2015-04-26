@@ -1,5 +1,5 @@
 //
-//  SubjectViewController.swift
+//  MajorViewController.swift
 //  CourseCatalog
 //
 //  Created by Kyler Stole on 4/25/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SubjectViewController: UITableViewController {
+class MajorViewController: UITableViewController {
 
     @IBOutlet var courseTable: UITableView!
     var courses = ["CS 160","CS 261"]
