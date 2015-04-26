@@ -15,9 +15,13 @@ class NetworkManager {
     
     class func getMajors(callback:(JSON) -> Void) -> Void {
         Alamofire.request(.GET, "\(url)/majors/")
-                 .responseJSON { (_, _, response, _) in
-                    var json = JSON(response!)
-                    callback(json)
+                 .responseJSON { (_, _, response, error) in
+                    if error == nil {
+                        var json = JSON(response!)
+                        callback(json)
+                    } else {
+                        println(error)
+                    }
                  }
     }
 }
