@@ -12,7 +12,10 @@ import SwiftyJSON
 class CombinedViewController: UITableViewController {
 
     @IBOutlet var majorCourseTable: UITableView!
-    var majors = ["Computer Science","Electrical & Computer Engineering","Physics","Mathematics"]
+    //var majors = ["Computer Science","Electrical & Computer Engineering","Physics","Mathematics"]
+    //var majors: [Major] = [Major]()
+    var subjects: [Major] = [Major]()
+    var majors: [String] = [String]()
     var courses = ["CS 160","CS 261"]
     var searchArray:[String] = [String]() {
         didSet  {self.majorCourseTable.reloadData()}
@@ -26,9 +29,20 @@ class CombinedViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         NetworkManager.getMajors({ (json: JSON) -> Void in
-            println(json)
+            //The `index` is 0..<json.count's string value
+            for (index: String, major: JSON) in json {
+                var maj: Major = Major()
+                maj.name = major["name"].stringValue
+                maj.abbr = major["abbr"].stringValue
+                self.subjects.append(maj)
+            }
+            
+            for subject in self.subjects {
+                self.majors.append(subject.name)
+            }
+            
+            self.tableView.reloadData()
         })
         
         // Configure countryTable
