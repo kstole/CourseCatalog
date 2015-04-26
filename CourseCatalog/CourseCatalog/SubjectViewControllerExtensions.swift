@@ -12,7 +12,7 @@ import UIKit
 extension SubjectViewController: UITableViewDataSource {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (self.subjectCourseSearchController.active) {
+        if (self.courseSearchController.active) {
             return self.searchArray.count
         } else {
             return self.courses.count
@@ -22,7 +22,7 @@ extension SubjectViewController: UITableViewDataSource {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = self.courseTable.dequeueReusableCellWithIdentifier("SubjectCell") as! UITableViewCell
         
-        if (self.subjectCourseSearchController.active) {
+        if (self.courseSearchController.active) {
             cell.textLabel?.text! = self.searchArray[indexPath.row]
         } else {
             cell.textLabel?.text! = self.courses[indexPath.row]

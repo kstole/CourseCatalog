@@ -11,7 +11,7 @@ import UIKit
 
 extension CombinedViewController: UITableViewDataSource {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        if (self.subjectCourseSearchController.active) {
+        if (self.combinedSearchController.active) {
             return 1
         } else {
             return 2
@@ -19,7 +19,7 @@ extension CombinedViewController: UITableViewDataSource {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (self.subjectCourseSearchController.active) {
+        if (self.combinedSearchController.active) {
             return self.searchArray.count
         } else {
             if section == 0 {
@@ -33,7 +33,7 @@ extension CombinedViewController: UITableViewDataSource {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = self.subjectCourseTable.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
         
-        if (self.subjectCourseSearchController.active) {
+        if (self.combinedSearchController.active) {
             cell.textLabel?.text! = self.searchArray[indexPath.row]
             return cell
         } else {
@@ -58,11 +58,12 @@ extension CombinedViewController: UITableViewDataSource {
 
 extension CombinedViewController: UITableViewDelegate {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.combinedSearchController.dismissViewControllerAnimated(false, completion: nil)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if indexPath.section == 0 {
-            self.performSegueWithIdentifier("CombinedToSubject", sender: self)
+            self.performSegueWithIdentifier("CombinedToSubject", sender: indexPath)
         } else {
-            self.performSegueWithIdentifier("CombinedToCourse", sender: self)
+            self.performSegueWithIdentifier("CombinedToCourse", sender: indexPath)
         }
     }
 }

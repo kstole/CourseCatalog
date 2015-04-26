@@ -15,7 +15,7 @@ class SubjectViewController: UITableViewController {
     var searchArray:[String] = [String]() {
         didSet  {self.courseTable.reloadData()}
     }
-    var subjectCourseSearchController = UISearchController()
+    var courseSearchController = UISearchController()
     
     var detailItem: AnyObject? {
         didSet {
@@ -26,6 +26,7 @@ class SubjectViewController: UITableViewController {
     
     func configureView() {
         // Update the user interface for the detail item.
+        println("configureView")
         if let detail: AnyObject = self.detailItem {
             self.navigationItem.title = detail.description
         }
@@ -44,7 +45,7 @@ class SubjectViewController: UITableViewController {
         self.courseTable.dataSource = self
         
         // Configure countrySearchController
-        self.subjectCourseSearchController = ({
+        self.courseSearchController = ({
             // Two setups provided below:
             
             // Setup One: This setup present the results in the current view.
@@ -59,7 +60,7 @@ class SubjectViewController: UITableViewController {
             return controller
         })()
         
-        self.configureView()
+        //self.configureView()
     }
     
     override func viewDidAppear(animated: Bool) {

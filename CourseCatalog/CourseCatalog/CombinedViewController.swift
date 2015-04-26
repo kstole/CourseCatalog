@@ -16,7 +16,7 @@ class CombinedViewController: UITableViewController {
     var searchArray:[String] = [String]() {
         didSet  {self.subjectCourseTable.reloadData()}
     }
-    var subjectCourseSearchController = UISearchController()
+    var combinedSearchController = UISearchController()
     
 
     override func awakeFromNib() {
@@ -31,7 +31,7 @@ class CombinedViewController: UITableViewController {
         self.subjectCourseTable.dataSource = self
         
         // Configure countrySearchController
-        self.subjectCourseSearchController = ({
+        self.combinedSearchController = ({
             // Two setups provided below:
             
             // Setup One: This setup present the results in the current view.
@@ -57,18 +57,18 @@ class CombinedViewController: UITableViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "CombinedToSubject" {
-            if let indexPath = self.tableView.indexPathForSelectedRow() {
+            if let indexPath = sender as? NSIndexPath {
                 let subject = subjects[indexPath.row] as String
+                println("subject: \(subject)")
                 (segue.destinationViewController as! SubjectViewController).detailItem = subject
             }
         } else if segue.identifier == "CombinedToCourse" {
-            if let indexPath = self.tableView.indexPathForSelectedRow() {
+            if let indexPath = sender as? NSIndexPath {
                 let course = courses[indexPath.row] as String
                 (segue.destinationViewController as! CourseViewController).detailItem = course
             }
         }
     }
-
-
+    
 }
 
