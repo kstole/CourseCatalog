@@ -2,8 +2,8 @@
 //  MajorViewControllerExtensions.swift
 //  SearchController
 //
-//  Created by Stuart Breckenridge on 17/8/14.
-//  Copyright (c) 2014 Stuart Breckenridge. All rights reserved.
+//  Created by Kyler Stole on 17/8/14.
+//  Copyright (c) 2015 Kyler Stole. All rights reserved.
 //
 
 import Foundation
@@ -26,7 +26,7 @@ extension MajorViewController: UITableViewDataSource {
             cell.textLabel?.text = "No content to show"
             return cell
         } else {
-            var cell = self.courseTable.dequeueReusableCellWithIdentifier("MajorCell") as! CourseTableViewCell
+            var cell = self.tableView.dequeueReusableCellWithIdentifier("MajorCell") as! CourseTableViewCell
             let source = (self.courseSearchController.active ? self.searchArray : self.courses)
             cell.courseNum?.text = source[indexPath.row].number
             cell.courseName?.text = source[indexPath.row].name

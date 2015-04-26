@@ -170,8 +170,6 @@
                         <barButtonItem key="backBarButtonItem" title="All" id="t8W-Si-85J"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="majorCourseTable" destination="mLL-gJ-YKr" id="lQO-ak-eI6"/>
-                        <outlet property="searchDisplayController" destination="Sno-Ql-eHm" id="7Us-Iq-LnG"/>
                         <segue destination="Ofx-fi-EjM" kind="show" identifier="CombinedToMajor" id="Etl-12-StG"/>
                         <segue destination="WrG-cP-8Ph" kind="show" identifier="CombinedToCourse" id="SN0-Q6-DZa"/>
                         <segue destination="YE3-Ij-wuI" kind="presentation" identifier="firstLaunch" id="YKG-42-2Nj"/>
@@ -263,7 +261,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Major" id="ftR-So-CZt"/>
                     <connections>
-                        <outlet property="courseTable" destination="QMr-SG-dJg" id="hgX-80-Voq"/>
                         <segue destination="WrG-cP-8Ph" kind="show" identifier="MajorToCourse" id="dHq-Je-9q7"/>
                     </connections>
                 </tableViewController>
@@ -543,6 +540,6 @@
         <image name="personIcon" width="240" height="240"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dHq-Je-9q7"/>
+        <segue reference="SN0-Q6-DZa"/>
     </inferredMetricsTieBreakers>
 </document>

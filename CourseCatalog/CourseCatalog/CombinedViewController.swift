@@ -11,13 +11,10 @@ import SwiftyJSON
 import SwiftSpinner
 
 class CombinedViewController: UITableViewController {
-
-    @IBOutlet var majorCourseTable: UITableView!
     
     var majors: [Major] = [Major]()
-    var courses = ["CS 160","CS 261"]
     var searchArray:[Major] = [Major]() {
-        didSet {self.majorCourseTable.reloadData()}
+        didSet {self.tableView.reloadData()}
     }
     var combinedSearchController = UISearchController()
     
@@ -55,8 +52,8 @@ class CombinedViewController: UITableViewController {
         }
         
         // Configure countryTable
-        self.majorCourseTable.delegate = self
-        self.majorCourseTable.dataSource = self
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         
         self.definesPresentationContext = true
         
@@ -71,7 +68,7 @@ class CombinedViewController: UITableViewController {
             controller.dimsBackgroundDuringPresentation = false
             controller.searchBar.searchBarStyle = .Minimal
             controller.searchBar.sizeToFit()
-            self.majorCourseTable.tableHeaderView = controller.searchBar
+            self.tableView.tableHeaderView = controller.searchBar
             
             return controller
         })()
@@ -80,7 +77,7 @@ class CombinedViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
-        self.majorCourseTable.reloadData()
+        self.tableView.reloadData()
     }
 
     // MARK: - Segues
@@ -91,7 +88,7 @@ class CombinedViewController: UITableViewController {
             if segue.identifier == "CombinedToMajor" {
                 (segue.destinationViewController as! MajorViewController).detailItem = major
             } else if segue.identifier == "CombinedToCourse" {
-                let course = courses[indexPath.row]
+                let course = searchArray[indexPath.row]
                 (segue.destinationViewController as! CourseViewController).detailItem = course
             }
         }

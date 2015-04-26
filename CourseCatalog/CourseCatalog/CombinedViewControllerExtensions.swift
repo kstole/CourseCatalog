@@ -2,48 +2,31 @@
 //  CombinedViewControllerExtensions.swift
 //  SearchController
 //
-//  Created by Stuart Breckenridge on 17/8/14.
-//  Copyright (c) 2014 Stuart Breckenridge. All rights reserved.
+//  Created by Kyler Stole on 17/8/14.
+//  Copyright (c) 2015 Kyler Stole. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
 extension CombinedViewController: UITableViewDataSource {
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        if (self.combinedSearchController.active) {
-            return 1
-        } else {
-            return 2
-        }
-    }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (self.combinedSearchController.active) {
             return self.searchArray.count
         } else {
-            if section == 0 {
-                return self.majors.count
-            } else {
-                return self.courses.count
-            }
+            return self.majors.count
         }
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = self.majorCourseTable.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
+        var cell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
         
-        if (self.combinedSearchController.active) {
-            cell.textLabel?.text! = self.searchArray[indexPath.row].name
-            return cell
-        } else {
-            if indexPath.section == 0 {
-                cell.textLabel?.text! = self.majors[indexPath.row].name
-            } else {
-                cell.textLabel?.text! = self.courses[indexPath.row]
-            }
-            return cell
-        }
+        let source = (self.combinedSearchController.active ? self.searchArray : self.majors)
+        
+        cell.textLabel?.text! = source[indexPath.row].name
+        
+        return cell
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

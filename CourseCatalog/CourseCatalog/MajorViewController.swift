@@ -11,16 +11,10 @@ import SwiftyJSON
 import SwiftSpinner
 
 class MajorViewController: UITableViewController {
-
-    @IBOutlet var courseTable: UITableView!
     
     var courses: [Course] = [Course]()
-//    var courses = [Course("160", "Intro to Com Sci"),
-//        Course("261", "Data Structures"),
-//        Course("351", "Something else"),
-//        Course("123", "something new")]
     var searchArray:[Course] = [Course]() {
-        didSet {self.courseTable.reloadData()}
+        didSet {self.tableView.reloadData()}
     }
     var courseSearchController = UISearchController()
     
@@ -72,9 +66,9 @@ class MajorViewController: UITableViewController {
             }
         }
         
-        // Configure courseTable
-        self.courseTable.delegate = self
-        self.courseTable.dataSource = self
+        // Configure tableView
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         
         self.definesPresentationContext = true
         
@@ -89,7 +83,7 @@ class MajorViewController: UITableViewController {
             controller.dimsBackgroundDuringPresentation = false
             controller.searchBar.searchBarStyle = .Minimal
             controller.searchBar.sizeToFit()
-            self.courseTable.tableHeaderView = controller.searchBar
+            self.tableView.tableHeaderView = controller.searchBar
             
             return controller
         })()
@@ -99,7 +93,7 @@ class MajorViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
-        self.courseTable.reloadData()
+        self.tableView.reloadData()
     }
 
     // MARK: - Segues
