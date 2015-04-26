@@ -56,7 +56,7 @@ class MajorViewController: UITableViewController {
                     crs.id = course["class_id"].stringValue
                     crs.profRating = (course["professor_rating"].stringValue as NSString).floatValue
                     crs.OSUBooksPrice = (course["osu_textbook_total"].stringValue as NSString).floatValue
-                    if (crs.name != "") {
+                    if (crs.name != "" && crs.name != self.courses.last?.name) {
                         self.courses.append(crs)
                     }
                 }
