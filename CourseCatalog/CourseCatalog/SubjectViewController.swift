@@ -60,7 +60,7 @@ class SubjectViewController: UITableViewController {
             return controller
         })()
         
-        //self.configureView()
+        self.configureView()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -71,7 +71,7 @@ class SubjectViewController: UITableViewController {
     // MARK: - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let indexPath = self.tableView.indexPathForSelectedRow() {
+        if let indexPath = sender as? NSIndexPath {
             let course = courses[indexPath.row] as String
             (segue.destinationViewController as! CourseViewController).detailItem = course
         }

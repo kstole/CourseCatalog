@@ -34,8 +34,9 @@ extension SubjectViewController: UITableViewDataSource {
 
 extension SubjectViewController: UITableViewDelegate {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.courseSearchController.dismissViewControllerAnimated(false, completion: nil)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        self.performSegueWithIdentifier("SubjectToCourse", sender: self)
+        self.performSegueWithIdentifier("SubjectToCourse", sender: indexPath)
     }
 }
 
