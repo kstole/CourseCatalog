@@ -9,11 +9,16 @@
 import Foundation
 
 class Course {
-    var number: Int?
-    var name: String?
-    var major: Major?
+    var number: String = "000"
+    var name: String = "Unknown Course"
+    var id: String = ""
     
-    var profRating: Float?
+    var profRating: Float = 0.0
     
-    var OSUBookPrice: Float?
+    var OSUBooksPrice: Float = 0.0
+    
+//    init(_ number: String, _ name: String) {
+//        self.number = number
+//        self.name = name
+//    }
 }

@@ -12,10 +12,11 @@ import SwiftyJSON
 class CombinedViewController: UITableViewController {
 
     @IBOutlet var majorCourseTable: UITableView!
+    
     var majors: [Major] = [Major]()
     var courses = ["CS 160","CS 261"]
     var searchArray:[Major] = [Major]() {
-        didSet  {self.majorCourseTable.reloadData()}
+        didSet {self.majorCourseTable.reloadData()}
     }
     var combinedSearchController = UISearchController()
     
@@ -32,6 +33,7 @@ class CombinedViewController: UITableViewController {
                 var maj: Major = Major()
                 maj.name = major["name"].stringValue
                 maj.abbr = major["abbr"].stringValue
+                maj.id = major["major_id"].stringValue
                 if (maj.name != "") {
                     self.majors.append(maj)
                 }

@@ -23,9 +23,11 @@ extension MajorViewController: UITableViewDataSource {
         var cell = self.courseTable.dequeueReusableCellWithIdentifier("MajorCell") as! CourseTableViewCell
         
         if (self.courseSearchController.active) {
-            cell.courseName?.text = self.searchArray[indexPath.row]
+            cell.courseNum?.text = self.searchArray[indexPath.row].number
+            cell.courseName?.text = self.searchArray[indexPath.row].name
         } else {
-            cell.courseName?.text = self.courses[indexPath.row]
+            cell.courseNum?.text = self.courses[indexPath.row].number
+            cell.courseName?.text = self.courses[indexPath.row].name
         }
         return cell
     }
@@ -46,9 +48,10 @@ extension MajorViewController: UISearchResultsUpdating {
         if searchController.searchBar.text.isEmpty {
             self.searchArray = self.courses
         } else {
-            let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text)
-            let array = (self.courses as NSArray).filteredArrayUsingPredicate(searchPredicate)
-            self.searchArray = array as! [String]
+            self.searchArray = self.courses.filter {
+                ($0.number as NSString).containsString(searchController.searchBar.text.lowercaseString) ||
+                    ($0.name.lowercaseString as NSString).containsString(searchController.searchBar.text.lowercaseString)
+            }
         }
     }
 }
