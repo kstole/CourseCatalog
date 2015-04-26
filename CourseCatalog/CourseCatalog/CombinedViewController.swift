@@ -45,8 +45,7 @@ class CombinedViewController: UITableViewController {
         let firstLaunch = NSUserDefaults.standardUserDefaults().boolForKey("FirstLaunch")
         if !firstLaunch  {
             self.performSegueWithIdentifier("firstLaunch", sender: self)
-        }
-        else {
+        } else {
             println("First launch, setting NSUserDefault.")
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "FirstLaunch")
         }

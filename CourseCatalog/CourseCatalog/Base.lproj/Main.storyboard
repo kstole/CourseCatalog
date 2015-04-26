@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -129,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q1o-P7-QMj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="604" y="-735"/>
+            <point key="canvasLocation" x="605.5" y="883.5"/>
         </scene>
         <!--MajorsAndCourses-->
         <scene sceneID="VgW-fR-Quf">
@@ -249,6 +250,7 @@
                                 <connections>
                                     <outlet property="courseName" destination="0Eh-Jc-dkV" id="GGe-er-I4z"/>
                                     <outlet property="courseNum" destination="Z41-lb-sQG" id="BhO-VU-TMk"/>
+                                    <outlet property="numBackground" destination="QBg-bC-Zs7" id="yZB-k1-MWg"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
