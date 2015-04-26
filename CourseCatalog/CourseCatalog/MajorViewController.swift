@@ -60,7 +60,6 @@ class MajorViewController: UITableViewController {
                         self.courses.append(crs)
                     }
                 }
-                
                 self.tableView.reloadData()
                 SwiftSpinner.hide()
             }
