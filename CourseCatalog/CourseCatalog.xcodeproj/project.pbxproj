@@ -95,6 +95,14 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		BDC552001AEC767700FB1223 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BD9ED7351AEC4314005105A0 /* UiColorExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		BDF3A8AB1AEC2CE10036CAA8 = {
 			isa = PBXGroup;
 			children = (
@@ -119,14 +127,14 @@
 		BDF3A8B61AEC2CE10036CAA8 /* CourseCatalog */ = {
 			isa = PBXGroup;
 			children = (
-				BD604FF01AEC7324000F8848 /* Models */,
 				BDF3A8B91AEC2CE10036CAA8 /* AppDelegate.swift */,
+				BD604FF01AEC7324000F8848 /* Models */,
 				BDF3A8BB1AEC2CE10036CAA8 /* CombinedViewController.swift */,
 				BDF3A8DB1AEC37FD0036CAA8 /* CombinedViewControllerExtensions.swift */,
 				BD4445931AEC5D570078A673 /* SubjectViewController.swift */,
 				BD4445941AEC5D570078A673 /* SubjectViewControllerExtensions.swift */,
 				BDF3A8BD1AEC2CE10036CAA8 /* CourseViewController.swift */,
-				BD9ED7351AEC4314005105A0 /* UiColorExtension.swift */,
+				BDC552001AEC767700FB1223 /* Extensions */,
 				BDF3A8BF1AEC2CE10036CAA8 /* Main.storyboard */,
 				BDF3A8C21AEC2CE10036CAA8 /* Images.xcassets */,
 				BDF3A8C41AEC2CE10036CAA8 /* LaunchScreen.xib */,
