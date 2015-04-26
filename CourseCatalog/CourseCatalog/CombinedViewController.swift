@@ -28,7 +28,6 @@ class CombinedViewController: UITableViewController {
         super.viewDidLoad()
         NetworkManager.getMajors({ (json: JSON) -> Void in
             //The `index` is 0..<json.count's string value
-            println(json)
             for (index: String, major: JSON) in json {
                 var maj: Major = Major()
                 maj.name = major["name"].stringValue
@@ -41,11 +40,13 @@ class CombinedViewController: UITableViewController {
             self.tableView.reloadData()
         })
         
-        // Configure countryTable
+        // Configure combinedTable
         self.majorCourseTable.delegate = self
         self.majorCourseTable.dataSource = self
         
-        // Configure countrySearchController
+        self.definesPresentationContext = true
+        
+        // Configure combinedSearchController
         self.combinedSearchController = ({
             // Two setups provided below:
             
@@ -73,9 +74,6 @@ class CombinedViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let indexPath = sender as? NSIndexPath {
             let major = (self.combinedSearchController.active ? searchArray[indexPath.row] : majors[indexPath.row]) as Major
-            if self.combinedSearchController.active {
-                self.combinedSearchController.dismissViewControllerAnimated(false, completion: nil)
-            }
             if segue.identifier == "CombinedToMajor" {
                 (segue.destinationViewController as! MajorViewController).detailItem = major
             } else if segue.identifier == "CombinedToCourse" {
