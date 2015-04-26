@@ -4,10 +4,14 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 1.2)
-  - Google-Maps-iOS-SDK (~> 1.9)
+  - Google-Maps-iOS-SDK (from `https://raw.githubusercontent.com/Reflejo/GoogleMapsPodspec/master/Google-Maps-iOS-SDK.podspec.json`)
+
+EXTERNAL SOURCES:
+  Google-Maps-iOS-SDK:
+    :podspec: https://raw.githubusercontent.com/Reflejo/GoogleMapsPodspec/master/Google-Maps-iOS-SDK.podspec.json
 
 SPEC CHECKSUMS:
   Alamofire: 1acfdf179aff68b41a48dff70c1ac7fa263e2bcb
-  Google-Maps-iOS-SDK: 4c008abdb68e03ae125c7f674be841d369e2b3de
+  Google-Maps-iOS-SDK: cd766778744e33806fd11cd6a730d5706d20e325
 
 COCOAPODS: 0.36.3

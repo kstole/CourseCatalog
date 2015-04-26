@@ -12,7 +12,11 @@ import Alamofire
 class NetworkManager {
     let url = "http://54.213.102.221:80"
     
-    func getMajors() -> [Dictionary<String, String>] {
-        //Alamofire.request(.GET, url, parameters: <#[String : AnyObject]?#>, encoding: <#ParameterEncoding#>)
-    }
+//    func getMajors() -> [Dictionary<String, String>] {
+//        Alamofire.request(.GET, url + "/majors/")
+//                 .response { (request, response, data, error) in
+//                    
+//                    
+//                            }
+//    }
 }
