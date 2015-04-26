@@ -42,7 +42,16 @@ class CombinedViewController: UITableViewController {
             self.tableView.reloadData()
         })
         
-        // Configure combinedTable
+        let firstLaunch = NSUserDefaults.standardUserDefaults().boolForKey("FirstLaunch")
+        if !firstLaunch  {
+            self.performSegueWithIdentifier("firstLaunch", sender: self)
+        }
+        else {
+            println("First launch, setting NSUserDefault.")
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "FirstLaunch")
+        }
+        
+        // Configure countryTable
         self.majorCourseTable.delegate = self
         self.majorCourseTable.dataSource = self
         
