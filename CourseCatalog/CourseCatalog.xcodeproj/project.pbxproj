@@ -13,7 +13,7 @@
 		BD604FEB1AEC7258000F8848 /* JSONHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD604FEA1AEC7258000F8848 /* JSONHandler.swift */; };
 		BD604FED1AEC7260000F8848 /* ClassList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD604FEC1AEC7260000F8848 /* ClassList.swift */; };
 		BD9ED7361AEC4314005105A0 /* UiColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9ED7351AEC4314005105A0 /* UiColorExtension.swift */; };
-		BDC552031AEC774100FB1223 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC552021AEC774100FB1223 /* Subject.swift */; };
+		BDC552031AEC774100FB1223 /* Major.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC552021AEC774100FB1223 /* Major.swift */; };
 		BDC552051AEC778700FB1223 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC552041AEC778700FB1223 /* Course.swift */; };
 		BDE1DB141AEC4FCC0059A280 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BDE1DB131AEC4FCC0059A280 /* Podfile */; };
 		BDF3A8BA1AEC2CE10036CAA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3A8B91AEC2CE10036CAA8 /* AppDelegate.swift */; };
@@ -45,7 +45,7 @@
 		BD604FEA1AEC7258000F8848 /* JSONHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONHandler.swift; sourceTree = "<group>"; };
 		BD604FEC1AEC7260000F8848 /* ClassList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassList.swift; sourceTree = "<group>"; };
 		BD9ED7351AEC4314005105A0 /* UiColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiColorExtension.swift; sourceTree = "<group>"; };
-		BDC552021AEC774100FB1223 /* Subject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Subject.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		BDC552021AEC774100FB1223 /* Major.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Major.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		BDC552041AEC778700FB1223 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Course.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		BDE1DB131AEC4FCC0059A280 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BDF3A8B41AEC2CE10036CAA8 /* CourseCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CourseCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,7 +112,7 @@
 		BDC552011AEC76F200FB1223 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
-				BDC552021AEC774100FB1223 /* Subject.swift */,
+				BDC552021AEC774100FB1223 /* Major.swift */,
 				BDC552041AEC778700FB1223 /* Course.swift */,
 			);
 			name = Objects;
@@ -354,7 +354,7 @@
 				BD4445961AEC5D570078A673 /* MajorViewControllerExtensions.swift in Sources */,
 				BD604FEB1AEC7258000F8848 /* JSONHandler.swift in Sources */,
 				BD604FED1AEC7260000F8848 /* ClassList.swift in Sources */,
-				BDC552031AEC774100FB1223 /* Subject.swift in Sources */,
+				BDC552031AEC774100FB1223 /* Major.swift in Sources */,
 				BD9ED7361AEC4314005105A0 /* UiColorExtension.swift in Sources */,
 				BDF3A8BC1AEC2CE10036CAA8 /* CombinedViewController.swift in Sources */,
 				BDF3A8BA1AEC2CE10036CAA8 /* AppDelegate.swift in Sources */,

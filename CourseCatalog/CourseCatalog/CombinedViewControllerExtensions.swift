@@ -34,11 +34,11 @@ extension CombinedViewController: UITableViewDataSource {
         var cell = self.majorCourseTable.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
         
         if (self.combinedSearchController.active) {
-            cell.textLabel?.text! = self.searchArray[indexPath.row]
+            cell.textLabel?.text! = self.searchArray[indexPath.row].name
             return cell
         } else {
             if indexPath.section == 0 {
-                cell.textLabel?.text! = self.majors[indexPath.row]
+                cell.textLabel?.text! = self.majors[indexPath.row].name
             } else {
                 cell.textLabel?.text! = self.courses[indexPath.row]
             }
@@ -75,9 +75,13 @@ extension CombinedViewController: UISearchResultsUpdating {
         if searchController.searchBar.text.isEmpty {
             self.searchArray = self.majors
         } else {
-            let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text)
-            let array = (self.majors as NSArray).filteredArrayUsingPredicate(searchPredicate)
-            self.searchArray = array as! [String]
+            //let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text)
+            //let array = (self.majors as NSArray).filteredArrayUsingPredicate(searchPredicate)
+            //self.searchArray = array as! [String]
+            self.searchArray = self.majors.filter {
+                ($0.name.lowercaseString as NSString).containsString(searchController.searchBar.text.lowercaseString)
+            }
+            
         }
     }
 }

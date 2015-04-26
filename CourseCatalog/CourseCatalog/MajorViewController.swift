@@ -26,7 +26,6 @@ class MajorViewController: UITableViewController {
     
     func configureView() {
         // Update the user interface for the detail item.
-        println("configureView")
         if let detail: AnyObject = self.detailItem {
             self.navigationItem.title = detail.description
         }

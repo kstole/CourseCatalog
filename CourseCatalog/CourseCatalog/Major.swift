@@ -10,9 +10,14 @@ import Foundation
 
 class Major {
     var name: String = "Unknown Major"
+    var abbr: String?
+    
+    var image: String?
+    
     var department: String?
     
-    init(_ name: String) {
-        self.name = name
-    }
+//    init(_ name: String, abbr: String) {
+//        self.name = name
+//        self.abbr = abbr
+//    }
 }
