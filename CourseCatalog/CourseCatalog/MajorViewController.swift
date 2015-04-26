@@ -7,15 +7,17 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class MajorViewController: UITableViewController {
 
     @IBOutlet var courseTable: UITableView!
     
-    var courses = [Course("160", "Intro to Com Sci"),
-        Course("261", "Data Structures"),
-        Course("351", "Something else"),
-        Course("123", "something new")]
+    var courses: [Course] = [Course]()
+//    var courses = [Course("160", "Intro to Com Sci"),
+//        Course("261", "Data Structures"),
+//        Course("351", "Something else"),
+//        Course("123", "something new")]
     var searchArray:[Course] = [Course]() {
         didSet {self.courseTable.reloadData()}
     }
@@ -30,10 +32,8 @@ class MajorViewController: UITableViewController {
     
     func configureView() {
         // Update the user interface for the detail item.
-        if let detail: AnyObject = self.detailItem {
-            if let major = detail as? Major {
-                self.navigationItem.title = major.name
-            }
+        if let major: Major = self.detailItem as? Major {
+            self.navigationItem.title = major.name
         }
     }
     
@@ -44,6 +44,26 @@ class MajorViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let major: Major = self.detailItem as? Major {
+            NetworkManager.getClassesWithMajorId(major.id, term: "Sp15") {
+                (json: JSON) -> Void in
+                println(json)
+                //The `index` is 0..<json.count's string value
+                for (index: String, course: JSON) in json {
+                    var crs: Course = Course()
+                    crs.number = course["class_num"].stringValue
+                    crs.name = course["class_name"].stringValue
+                    crs.id = course["class_id"].stringValue
+                    crs.profRating = (course["professor_rating"].stringValue as NSString).floatValue
+                    crs.OSUBooksPrice = (course["osu_textbook_total"].stringValue as NSString).floatValue
+                    if (crs.name != "") {
+                        self.courses.append(crs)
+                    }
+                }
+                
+                self.tableView.reloadData()
+            }
+        }
         
         // Configure courseTable
         self.courseTable.delegate = self

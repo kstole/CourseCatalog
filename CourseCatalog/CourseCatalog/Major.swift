@@ -11,11 +11,10 @@ import Foundation
 class Major {
     var name: String = "Unknown Major"
     var abbr: String = ""
+    var id: String = ""
     
-    var image: String?
-    
-    var department: String?
-    
+    var imageURL: String?
+        
 //    init(_ name: String, abbr: String) {
 //        self.name = name
 //        self.abbr = abbr

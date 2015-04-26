@@ -33,6 +33,7 @@ class CombinedViewController: UITableViewController {
                 var maj: Major = Major()
                 maj.name = major["name"].stringValue
                 maj.abbr = major["abbr"].stringValue
+                maj.id = major["major_id"].stringValue
                 if (maj.name != "") {
                     self.majors.append(maj)
                 }
