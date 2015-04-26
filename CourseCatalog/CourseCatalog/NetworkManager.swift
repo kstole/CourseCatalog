@@ -15,13 +15,50 @@ class NetworkManager {
     
     class func getMajors(callback:(JSON) -> Void) -> Void {
         Alamofire.request(.GET, "\(url)/majors/")
-                 .responseJSON { (_, _, response, error) in
+            .responseJSON { (_, _, response, error) in
                     if error == nil {
                         var json = JSON(response!)
                         callback(json)
                     } else {
                         println(error)
                     }
-                 }
+            }
     }
+
+    class func getClassesWithMajorId(majorId: String, term: String, callback:(JSON) -> Void) {
+        Alamofire.request(.GET, "\(url)/classes/", parameters: ["major_id": majorId, "term": term])
+            .responseJSON { (_, _, response, error) in
+                if error == nil {
+                    var json = JSON(response!)
+                    callback(json)
+                } else {
+                    println(error)
+                }
+            }
+    }
+    
+    class func getClassDetailsWithId(id: String, callback:(JSON) -> Void) {
+        Alamofire.request(.GET, "\(url)/class_details/", parameters: ["class_id": id])
+            .responseJSON { (_, _, response, error) in
+                if error == nil {
+                    var json = JSON(response!)
+                    callback(json)
+                } else {
+                    println(error)
+                }
+        }
+    }
+    
+    class func getClassDetailsWithCRN(crn: String, callback:(JSON) -> Void) {
+        Alamofire.request(.GET, "\(url)/class_details/", parameters: ["class_crn": crn])
+            .responseJSON { (_, _, response, error) in
+                if error == nil {
+                    var json = JSON(response!)
+                    callback(json)
+                } else {
+                    println(error)
+                }
+        }
+    }
+
 }
