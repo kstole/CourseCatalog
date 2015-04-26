@@ -12,6 +12,7 @@ import UIKit
 extension MajorViewController: UITableViewDataSource {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if self.courses.count == 0 {return 1}
         if (self.courseSearchController.active) {
             return self.searchArray.count
         } else {
@@ -20,14 +21,20 @@ extension MajorViewController: UITableViewDataSource {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = self.courseTable.dequeueReusableCellWithIdentifier("MajorCell") as! CourseTableViewCell
-        let source = (self.courseSearchController.active ? self.searchArray : self.courses)
-        cell.courseNum?.text = source[indexPath.row].number
-        cell.courseName?.text = source[indexPath.row].name
-        let adj = 190
-        let hueVal = indexPath.row*2+adj > 360 ? CGFloat(indexPath.row-360) : CGFloat((indexPath.row*2)+adj)
-        cell.numBackground.backgroundColor = UIColor(hue: hueVal/360.0, saturation: 60/100.0, brightness: 60/100.0, alpha: 1.0)
-        return cell
+        if self.courses.count == 0 {
+            let cell = UITableViewCell()
+            cell.textLabel?.text = "No content to show"
+            return cell
+        } else {
+            var cell = self.courseTable.dequeueReusableCellWithIdentifier("MajorCell") as! CourseTableViewCell
+            let source = (self.courseSearchController.active ? self.searchArray : self.courses)
+            cell.courseNum?.text = source[indexPath.row].number
+            cell.courseName?.text = source[indexPath.row].name
+            let adj = 190
+            let hueVal = indexPath.row*2+adj > 360 ? CGFloat(indexPath.row-360) : CGFloat((indexPath.row*2)+adj)
+            cell.numBackground.backgroundColor = UIColor(hue: hueVal/360.0, saturation: 60/100.0, brightness: 60/100.0, alpha: 1.0)
+            return cell
+        }
     }
     
 }

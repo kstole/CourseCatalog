@@ -204,10 +204,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QBg-bC-Zs7">
-                                            <rect key="frame" x="0.0" y="0.0" width="60" height="43"/>
+                                            <rect key="frame" x="-8" y="8" width="40" height="27"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="119" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z41-lb-sQG">
-                                                    <rect key="frame" x="-1" y="10" width="61" height="24"/>
+                                                    <rect key="frame" x="-1" y="2" width="41" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="zaD-fe-cl9"/>
                                                     </constraints>
@@ -218,14 +218,14 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.40784313725490196" green="0.31372549019607843" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="60" id="K0b-4o-69r"/>
+                                                <constraint firstAttribute="width" constant="40" id="K0b-4o-69r"/>
                                                 <constraint firstItem="Z41-lb-sQG" firstAttribute="width" secondItem="QBg-bC-Zs7" secondAttribute="width" id="bhM-Cp-c9B"/>
                                                 <constraint firstAttribute="centerX" secondItem="Z41-lb-sQG" secondAttribute="centerX" constant="1" id="i60-tx-bKj"/>
                                                 <constraint firstAttribute="centerY" secondItem="Z41-lb-sQG" secondAttribute="centerY" id="wk3-57-VGh"/>
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Eh-Jc-dkV">
-                                            <rect key="frame" x="73" y="11" width="519" height="21"/>
+                                            <rect key="frame" x="45" y="11" width="547" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="p9u-jN-LTf"/>
                                                 <constraint firstAttribute="width" constant="200" id="yhD-Gt-IpI"/>
@@ -242,9 +242,9 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="centerY" secondItem="0Eh-Jc-dkV" secondAttribute="centerY" id="jCc-tq-7dF"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="QBg-bC-Zs7" secondAttribute="bottom" constant="-8" id="nFi-XQ-nSO"/>
-                                        <constraint firstItem="QBg-bC-Zs7" firstAttribute="top" secondItem="W1A-pT-RgN" secondAttribute="topMargin" constant="-8" id="qbF-X0-kNm"/>
-                                        <constraint firstItem="QBg-bC-Zs7" firstAttribute="leading" secondItem="W1A-pT-RgN" secondAttribute="leadingMargin" constant="-8" id="xjy-8q-Rlb"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="QBg-bC-Zs7" secondAttribute="bottom" id="nFi-XQ-nSO"/>
+                                        <constraint firstItem="QBg-bC-Zs7" firstAttribute="top" secondItem="W1A-pT-RgN" secondAttribute="topMargin" id="qbF-X0-kNm"/>
+                                        <constraint firstItem="QBg-bC-Zs7" firstAttribute="leading" secondItem="W1A-pT-RgN" secondAttribute="leadingMargin" constant="-16" id="xjy-8q-Rlb"/>
                                         <constraint firstItem="0Eh-Jc-dkV" firstAttribute="leading" secondItem="QBg-bC-Zs7" secondAttribute="trailing" constant="13" id="y0I-od-Ju9"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="0Eh-Jc-dkV" secondAttribute="trailing" id="zLG-Ic-DhP"/>
                                     </constraints>
@@ -543,6 +543,6 @@
         <image name="personIcon" width="240" height="240"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SN0-Q6-DZa"/>
+        <segue reference="dHq-Je-9q7"/>
     </inferredMetricsTieBreakers>
 </document>
