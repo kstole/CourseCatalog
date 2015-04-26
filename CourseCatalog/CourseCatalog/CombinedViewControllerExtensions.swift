@@ -78,7 +78,8 @@ extension CombinedViewController: UISearchResultsUpdating {
             //let array = (self.majors as NSArray).filteredArrayUsingPredicate(searchPredicate)
             //self.searchArray = array as! [String]
             self.searchArray = self.majors.filter {
-                ($0.name.lowercaseString as NSString).containsString(searchController.searchBar.text.lowercaseString)
+                ($0.name.lowercaseString as NSString).containsString(searchController.searchBar.text.lowercaseString) ||
+                ($0.abbr.lowercaseString as NSString).containsString(searchController.searchBar.text.lowercaseString)
             }
             
         }

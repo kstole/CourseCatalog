@@ -11,9 +11,13 @@ import UIKit
 class MajorViewController: UITableViewController {
 
     @IBOutlet var courseTable: UITableView!
-    var courses = ["CS 160","CS 261","CS 351","CS 123"]
-    var searchArray:[String] = [String]() {
-        didSet  {self.courseTable.reloadData()}
+    
+    var courses = [Course("160", "Intro to Com Sci"),
+        Course("261", "Data Structures"),
+        Course("351", "Something else"),
+        Course("123", "something new")]
+    var searchArray:[Course] = [Course]() {
+        didSet {self.courseTable.reloadData()}
     }
     var courseSearchController = UISearchController()
     
@@ -75,7 +79,7 @@ class MajorViewController: UITableViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let indexPath = sender as? NSIndexPath {
-            let course = (self.courseSearchController.active ? searchArray[indexPath.row] : courses[indexPath.row]) as String
+            let course = (self.courseSearchController.active ? searchArray[indexPath.row] : courses[indexPath.row]) as Course
             (segue.destinationViewController as! CourseViewController).detailItem = course
         }
     }

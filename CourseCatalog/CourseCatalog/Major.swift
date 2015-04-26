@@ -10,7 +10,7 @@ import Foundation
 
 class Major {
     var name: String = "Unknown Major"
-    var abbr: String?
+    var abbr: String = ""
     
     var image: String?
     

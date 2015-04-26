@@ -12,10 +12,11 @@ import SwiftyJSON
 class CombinedViewController: UITableViewController {
 
     @IBOutlet var majorCourseTable: UITableView!
+    
     var majors: [Major] = [Major]()
     var courses = ["CS 160","CS 261"]
     var searchArray:[Major] = [Major]() {
-        didSet  {self.majorCourseTable.reloadData()}
+        didSet {self.majorCourseTable.reloadData()}
     }
     var combinedSearchController = UISearchController()
     
