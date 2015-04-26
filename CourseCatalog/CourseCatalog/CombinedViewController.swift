@@ -12,9 +12,9 @@ import SwiftyJSON
 class CombinedViewController: UITableViewController {
 
     @IBOutlet var majorCourseTable: UITableView!
-    var majors = ["Computer Science","Electrical & Computer Engineering","Physics","Mathematics"]
+    var majors: [Major] = [Major]()
     var courses = ["CS 160","CS 261"]
-    var searchArray:[String] = [String]() {
+    var searchArray:[Major] = [Major]() {
         didSet  {self.majorCourseTable.reloadData()}
     }
     var combinedSearchController = UISearchController()
@@ -26,12 +26,27 @@ class CombinedViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        NetworkManager.getMajors({ (json: JSON) -> Void in
+            //The `index` is 0..<json.count's string value
+            for (index: String, major: JSON) in json {
+                var maj: Major = Major()
+                maj.name = major["name"].stringValue
+                maj.abbr = major["abbr"].stringValue
+                if (maj.name != "") {
+                    self.majors.append(maj)
+                }
+            }
+            
+            self.tableView.reloadData()
+        })
         
-        // Configure countryTable
+        // Configure combinedTable
         self.majorCourseTable.delegate = self
         self.majorCourseTable.dataSource = self
         
-        // Configure countrySearchController
+        self.definesPresentationContext = true
+        
+        // Configure combinedSearchController
         self.combinedSearchController = ({
             // Two setups provided below:
             
@@ -57,14 +72,12 @@ class CombinedViewController: UITableViewController {
     // MARK: - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "CombinedToMajor" {
-            if let indexPath = sender as? NSIndexPath {
-                let major = majors[indexPath.row] as String
+        if let indexPath = sender as? NSIndexPath {
+            let major = (self.combinedSearchController.active ? searchArray[indexPath.row] : majors[indexPath.row]) as Major
+            if segue.identifier == "CombinedToMajor" {
                 (segue.destinationViewController as! MajorViewController).detailItem = major
-            }
-        } else if segue.identifier == "CombinedToCourse" {
-            if let indexPath = sender as? NSIndexPath {
-                let course = courses[indexPath.row] as String
+            } else if segue.identifier == "CombinedToCourse" {
+                let course = courses[indexPath.row]
                 (segue.destinationViewController as! CourseViewController).detailItem = course
             }
         }
