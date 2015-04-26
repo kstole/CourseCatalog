@@ -10,7 +10,7 @@ import UIKit
 import GoogleMaps
 import SwiftyJSON
 
-class CourseViewController: UITableViewController, CLLocationManagerDelegate  {
+class CourseViewController: UITableViewController, CLLocationManagerDelegate, UIContentContainer  {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -54,7 +54,7 @@ class CourseViewController: UITableViewController, CLLocationManagerDelegate  {
             NetworkManager.getClassDetailsWithId(course.id) { (json) -> Void in
                 println(json)
                 
-                self.nameLabel.text = json["class_name"].stringValue.capitalizedString
+                self.nameLabel.text = json["class_name"].stringValue
                 
                 self.timeLabel.text = json["days_of_week"].stringValue + " " + json["start_time"].stringValue + "-" + json["end_time"].stringValue
                 
@@ -159,6 +159,15 @@ class CourseViewController: UITableViewController, CLLocationManagerDelegate  {
         self.userLat = locValue.latitude
         self.userLon = locValue.longitude
         locationManager.stopUpdatingLocation()
+    }
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+        println("size-transition")
+        if let mapView = self.map.subviews[0] as? GMSMapView {
+            println("subview bounds change")
+            mapView.frame = self.map.bounds
+        }
     }
 
     @IBAction func addClass(sender: AnyObject) {

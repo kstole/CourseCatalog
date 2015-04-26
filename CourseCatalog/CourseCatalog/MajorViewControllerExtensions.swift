@@ -24,6 +24,9 @@ extension MajorViewController: UITableViewDataSource {
         if self.courses.count == 0 {
             let cell = UITableViewCell()
             cell.textLabel?.text = "No content to show"
+            cell.textLabel?.textAlignment = .Center
+            cell.textLabel?.textColor = UIColor.lightGrayColor()
+            cell.selectionStyle = .None
             return cell
         } else {
             var cell = self.tableView.dequeueReusableCellWithIdentifier("MajorCell") as! CourseTableViewCell
@@ -31,7 +34,7 @@ extension MajorViewController: UITableViewDataSource {
             cell.courseNum?.text = source[indexPath.row].number
             cell.courseName?.text = source[indexPath.row].name
             let adj = 190
-            let hueVal = indexPath.row*2+adj > 360 ? CGFloat(indexPath.row-360) : CGFloat((indexPath.row*2)+adj)
+            let hueVal = indexPath.row*3+adj > 360 ? CGFloat(indexPath.row-360) : CGFloat((indexPath.row*3)+adj)
             cell.numBackground.backgroundColor = UIColor(hue: hueVal/360.0, saturation: 60/100.0, brightness: 60/100.0, alpha: 1.0)
             return cell
         }
@@ -41,8 +44,10 @@ extension MajorViewController: UITableViewDataSource {
 
 extension MajorViewController: UITableViewDelegate {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        self.performSegueWithIdentifier("MajorToCourse", sender: indexPath)
+        if self.courses.count != 0 {
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            self.performSegueWithIdentifier("MajorToCourse", sender: indexPath)
+        }
     }
 }
 
