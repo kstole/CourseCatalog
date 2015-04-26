@@ -27,10 +27,6 @@ class CombinedViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NetworkManager.getMajors({ (json: JSON) -> Void in
-            println(json)
-        })
-        
         // Configure countryTable
         self.majorCourseTable.delegate = self
         self.majorCourseTable.dataSource = self
