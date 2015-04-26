@@ -58,7 +58,6 @@ extension CombinedViewController: UITableViewDataSource {
 
 extension CombinedViewController: UITableViewDelegate {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.combinedSearchController.dismissViewControllerAnimated(false, completion: nil)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if indexPath.section == 0 {
             self.performSegueWithIdentifier("CombinedToMajor", sender: indexPath)

@@ -28,11 +28,14 @@ class CombinedViewController: UITableViewController {
         super.viewDidLoad()
         NetworkManager.getMajors({ (json: JSON) -> Void in
             //The `index` is 0..<json.count's string value
+            println(json)
             for (index: String, major: JSON) in json {
                 var maj: Major = Major()
                 maj.name = major["name"].stringValue
                 maj.abbr = major["abbr"].stringValue
-                self.majors.append(maj)
+                if (maj.name != "") {
+                    self.majors.append(maj)
+                }
             }
             
             self.tableView.reloadData()
@@ -68,14 +71,15 @@ class CombinedViewController: UITableViewController {
     // MARK: - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "CombinedToMajor" {
-            if let indexPath = sender as? NSIndexPath {
-                let major = majors[indexPath.row] as Major
-                (segue.destinationViewController as! MajorViewController).detailItem = major
+        if let indexPath = sender as? NSIndexPath {
+            let major = (self.combinedSearchController.active ? searchArray[indexPath.row] : majors[indexPath.row]) as Major
+            if self.combinedSearchController.active {
+                self.combinedSearchController.dismissViewControllerAnimated(false, completion: nil)
             }
-        } else if segue.identifier == "CombinedToCourse" {
-            if let indexPath = sender as? NSIndexPath {
-                let course = courses[indexPath.row] as String
+            if segue.identifier == "CombinedToMajor" {
+                (segue.destinationViewController as! MajorViewController).detailItem = major
+            } else if segue.identifier == "CombinedToCourse" {
+                let course = courses[indexPath.row]
                 (segue.destinationViewController as! CourseViewController).detailItem = course
             }
         }

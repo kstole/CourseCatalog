@@ -83,19 +83,61 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MajorCell" textLabel="rTQ-hf-QEI" style="IBUITableViewCellStyleDefault" id="ytd-Pu-Wfy">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MajorCell" id="ytd-Pu-Wfy" customClass="CourseTableViewCell" customModule="CourseCatalog" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ytd-Pu-Wfy" id="W1A-pT-RgN">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rTQ-hf-QEI">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QBg-bC-Zs7">
+                                            <rect key="frame" x="0.0" y="0.0" width="60" height="43"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="119" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z41-lb-sQG">
+                                                    <rect key="frame" x="-1" y="10" width="61" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="zaD-fe-cl9"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="K0b-4o-69r"/>
+                                                <constraint firstItem="Z41-lb-sQG" firstAttribute="width" secondItem="QBg-bC-Zs7" secondAttribute="width" id="bhM-Cp-c9B"/>
+                                                <constraint firstAttribute="centerX" secondItem="Z41-lb-sQG" secondAttribute="centerX" constant="1" id="i60-tx-bKj"/>
+                                                <constraint firstAttribute="centerY" secondItem="Z41-lb-sQG" secondAttribute="centerY" id="wk3-57-VGh"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Eh-Jc-dkV">
+                                            <rect key="frame" x="73" y="11" width="519" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="p9u-jN-LTf"/>
+                                                <constraint firstAttribute="width" constant="200" id="yhD-Gt-IpI"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="yhD-Gt-IpI"/>
+                                                </mask>
+                                            </variation>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="centerY" secondItem="0Eh-Jc-dkV" secondAttribute="centerY" id="jCc-tq-7dF"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="QBg-bC-Zs7" secondAttribute="bottom" constant="-8" id="nFi-XQ-nSO"/>
+                                        <constraint firstItem="QBg-bC-Zs7" firstAttribute="top" secondItem="W1A-pT-RgN" secondAttribute="topMargin" constant="-8" id="qbF-X0-kNm"/>
+                                        <constraint firstItem="QBg-bC-Zs7" firstAttribute="leading" secondItem="W1A-pT-RgN" secondAttribute="leadingMargin" constant="-8" id="xjy-8q-Rlb"/>
+                                        <constraint firstItem="0Eh-Jc-dkV" firstAttribute="leading" secondItem="QBg-bC-Zs7" secondAttribute="trailing" constant="13" id="y0I-od-Ju9"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="0Eh-Jc-dkV" secondAttribute="trailing" id="zLG-Ic-DhP"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="courseName" destination="0Eh-Jc-dkV" id="GGe-er-I4z"/>
+                                    <outlet property="courseNum" destination="Z41-lb-sQG" id="BhO-VU-TMk"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -398,6 +440,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="SN0-Q6-DZa"/>
+        <segue reference="dHq-Je-9q7"/>
     </inferredMetricsTieBreakers>
 </document>
