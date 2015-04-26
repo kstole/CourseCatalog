@@ -24,6 +24,9 @@ extension MajorViewController: UITableViewDataSource {
         let source = (self.courseSearchController.active ? self.searchArray : self.courses)
         cell.courseNum?.text = source[indexPath.row].number
         cell.courseName?.text = source[indexPath.row].name
+        let adj = 190
+        let hueVal = indexPath.row*2+adj > 360 ? CGFloat(indexPath.row-360) : CGFloat((indexPath.row*2)+adj)
+        cell.numBackground.backgroundColor = UIColor(hue: hueVal/360.0, saturation: 60/100.0, brightness: 60/100.0, alpha: 1.0)
         return cell
     }
     
