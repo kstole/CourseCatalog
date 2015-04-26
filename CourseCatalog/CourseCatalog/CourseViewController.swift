@@ -61,7 +61,9 @@ class CourseViewController: UITableViewController, CLLocationManagerDelegate, UI
                 self.profNameLabel.text = json["professor"]["first_name"].stringValue + " " + json["professor"]["last_name"].stringValue
                 
                 self.profAvgRatingLabel.text = json["professor"]["rating"].stringValue
-                
+                self.profClarityLabel.text = json["professor"]["clarity"].stringValue
+                self.profEasyLabel.text = json["professor"]["easiness"].stringValue
+                self.profHelpfulLabel.text = json["professor"]["helpfulnes"].stringValue
                 self.descriptionLabel.text = json["description"].stringValue
                 self.dstLat = (json["lat"].stringValue as NSString).doubleValue
                 self.dstLon = (json["lon"].stringValue as NSString).doubleValue
