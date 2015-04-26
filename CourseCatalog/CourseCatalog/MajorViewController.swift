@@ -35,6 +35,7 @@ class MajorViewController: UITableViewController {
         if let major: Major = self.detailItem as? Major {
             self.navigationItem.title = major.name
         }
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
     }
     
 

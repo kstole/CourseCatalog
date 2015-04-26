@@ -50,12 +50,14 @@ class CourseViewController: UITableViewController, CLLocationManagerDelegate  {
         // Update the user interface for the detail item.
         if let course: Course = self.detailItem as? Course, major = course.major {
             self.navigationItem.title = major.name
+            self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+
             //self.course_name.text = course.name
             
             NetworkManager.getClassDetailsWithId(course.id) { (json) -> Void in
                 println(json)
                 
-                self.course_name.text = json["class_name"].stringValue
+                self.course_name.text = json["class_name"].stringValue.capitalizedString
                 
                 self.course_time.text = json["days_of_week"].stringValue + " " + json["start_time"].stringValue + "-" + json["end_time"].stringValue
                 
@@ -82,6 +84,8 @@ class CourseViewController: UITableViewController, CLLocationManagerDelegate  {
         tableView.estimatedRowHeight = 44.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
+
+        
         self.configureView()
     }
     
@@ -99,7 +103,6 @@ class CourseViewController: UITableViewController, CLLocationManagerDelegate  {
         self.course_name.sizeToFit()
         self.course_description.sizeToFit()
         self.course_time.sizeToFit()
-        
         
         //initializeMaps(lat, lon: lon)
     }

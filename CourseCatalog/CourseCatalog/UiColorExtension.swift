@@ -21,7 +21,7 @@ extension UIColor {
     }
     
     class func OSUBlueColor() -> UIColor {
-        return UIColor(red:0.27, green:0.48, blue:1, alpha:1)
+        return UIColor(red:0.18, green:0.72, blue:1, alpha:1)
     }
     /**
     Returns a color object whose RGB values are 104, 80, and 64 and whose alpha value is 1.0.

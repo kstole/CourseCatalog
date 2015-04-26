@@ -43,11 +43,13 @@ class CombinedViewController: UITableViewController {
         })
         
         let firstLaunch = NSUserDefaults.standardUserDefaults().boolForKey("FirstLaunch")
-        if !firstLaunch  {
-            self.performSegueWithIdentifier("firstLaunch", sender: self)
-        } else {
+        if firstLaunch {
+            println("Not first launch.")
+        }
+        else {
             println("First launch, setting NSUserDefault.")
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "FirstLaunch")
+            self.performSegueWithIdentifier("firstLaunch", sender: self)
         }
         
         // Configure countryTable
