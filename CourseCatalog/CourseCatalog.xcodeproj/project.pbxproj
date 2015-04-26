@@ -12,7 +12,6 @@
 		BD4445961AEC5D570078A673 /* SubjectViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4445941AEC5D570078A673 /* SubjectViewControllerExtensions.swift */; };
 		BD604FEB1AEC7258000F8848 /* JSONHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD604FEA1AEC7258000F8848 /* JSONHandler.swift */; };
 		BD604FED1AEC7260000F8848 /* ClassList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD604FEC1AEC7260000F8848 /* ClassList.swift */; };
-		BD604FEF1AEC7268000F8848 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD604FEE1AEC7268000F8848 /* InfoTableViewController.swift */; };
 		BD9ED7361AEC4314005105A0 /* UiColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9ED7351AEC4314005105A0 /* UiColorExtension.swift */; };
 		BDE1DB141AEC4FCC0059A280 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BDE1DB131AEC4FCC0059A280 /* Podfile */; };
 		BDF3A8BA1AEC2CE10036CAA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3A8B91AEC2CE10036CAA8 /* AppDelegate.swift */; };
@@ -42,7 +41,6 @@
 		BD4445941AEC5D570078A673 /* SubjectViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectViewControllerExtensions.swift; sourceTree = "<group>"; };
 		BD604FEA1AEC7258000F8848 /* JSONHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONHandler.swift; sourceTree = "<group>"; };
 		BD604FEC1AEC7260000F8848 /* ClassList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassList.swift; sourceTree = "<group>"; };
-		BD604FEE1AEC7268000F8848 /* InfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
 		BD9ED7351AEC4314005105A0 /* UiColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiColorExtension.swift; sourceTree = "<group>"; };
 		BDE1DB131AEC4FCC0059A280 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BDF3A8B41AEC2CE10036CAA8 /* CourseCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CourseCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,7 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				BD604FF01AEC7324000F8848 /* Models */,
-				BD604FEE1AEC7268000F8848 /* InfoTableViewController.swift */,
 				BDF3A8B91AEC2CE10036CAA8 /* AppDelegate.swift */,
 				BDF3A8BB1AEC2CE10036CAA8 /* CombinedViewController.swift */,
 				BDF3A8DB1AEC37FD0036CAA8 /* CombinedViewControllerExtensions.swift */,
@@ -325,7 +322,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDF3A8DC1AEC37FD0036CAA8 /* CombinedViewControllerExtensions.swift in Sources */,
-				BD604FEF1AEC7268000F8848 /* InfoTableViewController.swift in Sources */,
 				BD4445951AEC5D570078A673 /* SubjectViewController.swift in Sources */,
 				BDF3A8BE1AEC2CE10036CAA8 /* CourseViewController.swift in Sources */,
 				BD4445961AEC5D570078A673 /* SubjectViewControllerExtensions.swift in Sources */,
