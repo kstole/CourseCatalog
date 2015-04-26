@@ -10,11 +10,11 @@ import UIKit
 
 class CombinedViewController: UITableViewController {
 
-    @IBOutlet var subjectCourseTable: UITableView!
-    var subjects = ["Computer Science","Electrical & Computer Engineering","Physics","Mathematics"]
+    @IBOutlet var majorCourseTable: UITableView!
+    var majors = ["Computer Science","Electrical & Computer Engineering","Physics","Mathematics"]
     var courses = ["CS 160","CS 261"]
     var searchArray:[String] = [String]() {
-        didSet  {self.subjectCourseTable.reloadData()}
+        didSet  {self.majorCourseTable.reloadData()}
     }
     var combinedSearchController = UISearchController()
     
@@ -27,8 +27,8 @@ class CombinedViewController: UITableViewController {
         super.viewDidLoad()
         
         // Configure countryTable
-        self.subjectCourseTable.delegate = self
-        self.subjectCourseTable.dataSource = self
+        self.majorCourseTable.delegate = self
+        self.majorCourseTable.dataSource = self
         
         // Configure countrySearchController
         self.combinedSearchController = ({
@@ -41,7 +41,7 @@ class CombinedViewController: UITableViewController {
             controller.dimsBackgroundDuringPresentation = false
             controller.searchBar.searchBarStyle = .Minimal
             controller.searchBar.sizeToFit()
-            self.subjectCourseTable.tableHeaderView = controller.searchBar
+            self.majorCourseTable.tableHeaderView = controller.searchBar
             
             return controller
         })()
@@ -50,17 +50,16 @@ class CombinedViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
-        self.subjectCourseTable.reloadData()
+        self.majorCourseTable.reloadData()
     }
 
     // MARK: - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "CombinedToSubject" {
+        if segue.identifier == "CombinedToMajor" {
             if let indexPath = sender as? NSIndexPath {
-                let subject = subjects[indexPath.row] as String
-                println("subject: \(subject)")
-                (segue.destinationViewController as! SubjectViewController).detailItem = subject
+                let major = majors[indexPath.row] as String
+                (segue.destinationViewController as! MajorViewController).detailItem = major
             }
         } else if segue.identifier == "CombinedToCourse" {
             if let indexPath = sender as? NSIndexPath {

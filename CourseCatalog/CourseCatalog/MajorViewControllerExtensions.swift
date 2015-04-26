@@ -1,5 +1,5 @@
 //
-//  SubjectViewControllerExtensions.swift
+//  MajorViewControllerExtensions.swift
 //  SearchController
 //
 //  Created by Stuart Breckenridge on 17/8/14.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension SubjectViewController: UITableViewDataSource {
+extension MajorViewController: UITableViewDataSource {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (self.courseSearchController.active) {
@@ -20,7 +20,7 @@ extension SubjectViewController: UITableViewDataSource {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = self.courseTable.dequeueReusableCellWithIdentifier("SubjectCell") as! UITableViewCell
+        var cell = self.courseTable.dequeueReusableCellWithIdentifier("MajorCell") as! UITableViewCell
         
         if (self.courseSearchController.active) {
             cell.textLabel?.text! = self.searchArray[indexPath.row]
@@ -32,15 +32,15 @@ extension SubjectViewController: UITableViewDataSource {
     
 }
 
-extension SubjectViewController: UITableViewDelegate {
+extension MajorViewController: UITableViewDelegate {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.courseSearchController.dismissViewControllerAnimated(false, completion: nil)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        self.performSegueWithIdentifier("SubjectToCourse", sender: indexPath)
+        self.performSegueWithIdentifier("MajorToCourse", sender: indexPath)
     }
 }
 
-extension SubjectViewController: UISearchResultsUpdating {
+extension MajorViewController: UISearchResultsUpdating {
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         self.searchArray.removeAll(keepCapacity: false)
         
