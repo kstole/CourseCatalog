@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMaps
+import SwiftyJSON
 
 class CourseViewController: UITableViewController, CLLocationManagerDelegate  {
     
@@ -22,6 +23,7 @@ class CourseViewController: UITableViewController, CLLocationManagerDelegate  {
     
     @IBOutlet weak var map: UIView!
     //var mapView : GMSMapView!
+    @IBOutlet weak var addButton: UIBarButtonItem!
     
     @IBOutlet weak var course_description_cell: UITableViewCell!
 
@@ -34,11 +36,14 @@ class CourseViewController: UITableViewController, CLLocationManagerDelegate  {
         }
     }
     
+    var result:JSON!
+    
     var dstLat:Double!
     var dstLon:Double!
     
     var userLat:Double!
     var userLon:Double!
+    var classId:String!
 
     let locationManager = CLLocationManager()
     
@@ -72,10 +77,26 @@ class CourseViewController: UITableViewController, CLLocationManagerDelegate  {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        
+        
+        //#pragma warning deletes all NSUserDefaults
+        NSUserDefaults.standardUserDefaults().removePersistentDomainForName(NSBundle.mainBundle().bundleIdentifier!)
+        
         tableView.estimatedRowHeight = 44.0
         tableView.rowHeight = UITableViewAutomaticDimension
+        classId = "35"
         
         //self.configureView()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if (ClassList.isAdded(classId)) {
+            self.addButton.enabled = false
+        }
+        else {
+            self.addButton.enabled = true
+        }
+        
     }
     
     
@@ -145,5 +166,14 @@ class CourseViewController: UITableViewController, CLLocationManagerDelegate  {
         locationManager.stopUpdatingLocation()
     }
 
+    @IBAction func addClass(sender: AnyObject) {
+        if (self.result != nil) {
+            ClassList.saveClass(classId, json: self.result)
+            self.addButton.enabled = false
+        }
+        else {
+            self.addButton.enabled = true
+        }
+    }
 }
 
