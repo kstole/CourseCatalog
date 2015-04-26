@@ -23,7 +23,7 @@ extension MajorViewController: UITableViewDataSource {
         var cell = self.courseTable.dequeueReusableCellWithIdentifier("MajorCell") as! CourseTableViewCell
         
         if (self.courseSearchController.active) {
-            cell.courseName?.text = self.courses[indexPath.row]
+            cell.courseName?.text = self.searchArray[indexPath.row]
         } else {
             cell.courseName?.text = self.courses[indexPath.row]
         }
@@ -34,7 +34,6 @@ extension MajorViewController: UITableViewDataSource {
 
 extension MajorViewController: UITableViewDelegate {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.courseSearchController.dismissViewControllerAnimated(false, completion: nil)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         self.performSegueWithIdentifier("MajorToCourse", sender: indexPath)
     }

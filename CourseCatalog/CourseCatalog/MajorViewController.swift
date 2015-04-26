@@ -41,11 +41,13 @@ class MajorViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Configure countryTable
+        // Configure courseTable
         self.courseTable.delegate = self
         self.courseTable.dataSource = self
         
-        // Configure countrySearchController
+        self.definesPresentationContext = true
+        
+        // Configure courseSearchController
         self.courseSearchController = ({
             // Two setups provided below:
             
@@ -73,7 +75,7 @@ class MajorViewController: UITableViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let indexPath = sender as? NSIndexPath {
-            let course = courses[indexPath.row] as String
+            let course = (self.courseSearchController.active ? searchArray[indexPath.row] : courses[indexPath.row]) as String
             (segue.destinationViewController as! CourseViewController).detailItem = course
         }
     }
