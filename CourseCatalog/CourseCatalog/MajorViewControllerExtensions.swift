@@ -21,14 +21,9 @@ extension MajorViewController: UITableViewDataSource {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = self.courseTable.dequeueReusableCellWithIdentifier("MajorCell") as! CourseTableViewCell
-        
-        if (self.courseSearchController.active) {
-            cell.courseNum?.text = self.searchArray[indexPath.row].number
-            cell.courseName?.text = self.searchArray[indexPath.row].name
-        } else {
-            cell.courseNum?.text = self.courses[indexPath.row].number
-            cell.courseName?.text = self.courses[indexPath.row].name
-        }
+        let source = (self.courseSearchController.active ? self.searchArray : self.courses)
+        cell.courseNum?.text = source[indexPath.row].number
+        cell.courseName?.text = source[indexPath.row].name
         return cell
     }
     
