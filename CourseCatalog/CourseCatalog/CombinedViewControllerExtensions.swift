@@ -75,10 +75,13 @@ extension CombinedViewController: UISearchResultsUpdating {
         if searchController.searchBar.text.isEmpty {
             self.searchArray = self.majors
         } else {
-            let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text)
-            let array = (self.majors as NSArray).filteredArrayUsingPredicate(searchPredicate)
-            let filteredArray = self.majors.filter { ($0.name as NSString).containsString(searchController.searchBar.text) }
-            self.searchArray = filteredArray as! [Major]
+            //let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text)
+            //let array = (self.majors as NSArray).filteredArrayUsingPredicate(searchPredicate)
+            //self.searchArray = array as! [String]
+            self.searchArray = self.majors.filter {
+                ($0.name.lowercaseString as NSString).containsString(searchController.searchBar.text.lowercaseString)
+            }
+            
         }
     }
 }
