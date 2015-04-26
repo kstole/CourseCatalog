@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import SwiftSpinner
 
 class MajorViewController: UITableViewController {
 
@@ -46,6 +47,7 @@ class MajorViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let major: Major = self.detailItem as? Major {
+            SwiftSpinner.show("Acquiring courses...")
             NetworkManager.getClassesWithMajorId(major.id, term: "Sp15") {
                 (json: JSON) -> Void in
                 println(json)
@@ -66,6 +68,7 @@ class MajorViewController: UITableViewController {
                 }
                 
                 self.tableView.reloadData()
+                SwiftSpinner.hide()
             }
         }
         

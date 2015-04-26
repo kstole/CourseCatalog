@@ -18,6 +18,12 @@
 #define COCOAPODS_VERSION_MINOR_Google_Maps_iOS_SDK 9
 #define COCOAPODS_VERSION_PATCH_Google_Maps_iOS_SDK 2
 
+// SwiftSpinner
+#define COCOAPODS_POD_AVAILABLE_SwiftSpinner
+#define COCOAPODS_VERSION_MAJOR_SwiftSpinner 0
+#define COCOAPODS_VERSION_MINOR_SwiftSpinner 6
+#define COCOAPODS_VERSION_PATCH_SwiftSpinner 6
+
 // SwiftyJSON
 #define COCOAPODS_POD_AVAILABLE_SwiftyJSON
 #define COCOAPODS_VERSION_MAJOR_SwiftyJSON 2

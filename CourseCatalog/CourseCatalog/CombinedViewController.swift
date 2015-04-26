@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import SwiftSpinner
 
 class CombinedViewController: UITableViewController {
 
@@ -27,6 +28,7 @@ class CombinedViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        SwiftSpinner.show("Acquiring data...")
         NetworkManager.getMajors({ (json: JSON) -> Void in
             //The `index` is 0..<json.count's string value
             for (index: String, major: JSON) in json {
@@ -40,6 +42,7 @@ class CombinedViewController: UITableViewController {
             }
             
             self.tableView.reloadData()
+            SwiftSpinner.hide()
         })
         
         let firstLaunch = NSUserDefaults.standardUserDefaults().boolForKey("FirstLaunch")
