@@ -19,6 +19,10 @@ extension UIColor {
     class func OSUOrangeColor() -> UIColor {
         return UIColor(red: 243/255.0, green: 115/255.0, blue: 33/255.0, alpha: 1.0)
     }
+    
+    class func OSUBlueColor() -> UIColor {
+        return UIColor(red:0.27, green:0.48, blue:1, alpha:1)
+    }
     /**
     Returns a color object whose RGB values are 104, 80, and 64 and whose alpha value is 1.0.
     
