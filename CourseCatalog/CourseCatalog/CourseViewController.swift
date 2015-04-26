@@ -12,14 +12,14 @@ import SwiftyJSON
 
 class CourseViewController: UITableViewController, CLLocationManagerDelegate  {
     
-    @IBOutlet weak var course_name: UILabel!
-    @IBOutlet weak var course_description: UILabel!
-    @IBOutlet weak var course_time: UILabel!
-    @IBOutlet weak var prof_name: UILabel!
-    @IBOutlet weak var prov_avg_rtg: UILabel!
-    @IBOutlet weak var prof_helpful: UILabel!
-    @IBOutlet weak var prof_easy: UILabel!
-    @IBOutlet weak var prof_clarity: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var profNameLabel: UILabel!
+    @IBOutlet weak var profAvgRatingLabel: UILabel!
+    @IBOutlet weak var profHelpfulLabel: UILabel!
+    @IBOutlet weak var profEasyLabel: UILabel!
+    @IBOutlet weak var profClarityLabel: UILabel!
     
     @IBOutlet weak var map: UIView!
     //var mapView : GMSMapView!
@@ -30,10 +30,7 @@ class CourseViewController: UITableViewController, CLLocationManagerDelegate  {
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     var mapButton : UIButton!
     var detailItem: AnyObject? {
-        didSet {
-            // Update the view.
-            self.configureView()
-        }
+        didSet {self.configureView()}
     }
     
     var result:JSON!
@@ -49,7 +46,7 @@ class CourseViewController: UITableViewController, CLLocationManagerDelegate  {
     func configureView() {
         // Update the user interface for the detail item.
         if let course: Course = self.detailItem as? Course, major = course.major {
-            self.navigationItem.title = major.name
+            self.navigationItem.title = "\(major.abbr) \(course.number)"
             self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
 
             //self.course_name.text = course.name
@@ -57,15 +54,15 @@ class CourseViewController: UITableViewController, CLLocationManagerDelegate  {
             NetworkManager.getClassDetailsWithId(course.id) { (json) -> Void in
                 println(json)
                 
-                self.course_name.text = json["class_name"].stringValue.capitalizedString
+                self.nameLabel.text = json["class_name"].stringValue.capitalizedString
                 
-                self.course_time.text = json["days_of_week"].stringValue + " " + json["start_time"].stringValue + "-" + json["end_time"].stringValue
+                self.timeLabel.text = json["days_of_week"].stringValue + " " + json["start_time"].stringValue + "-" + json["end_time"].stringValue
                 
-                self.prof_name.text = json["professor"]["first_name"].stringValue + " " + json["professor"]["last_name"].stringValue
+                self.profNameLabel.text = json["professor"]["first_name"].stringValue + " " + json["professor"]["last_name"].stringValue
                 
-                self.prov_avg_rtg.text = json["professor"]["rating"].stringValue
+                self.profAvgRatingLabel.text = json["professor"]["rating"].stringValue
                 
-                self.course_description.text = json["description"].stringValue
+                self.descriptionLabel.text = json["description"].stringValue
                 self.dstLat = (json["lat"].stringValue as NSString).doubleValue
                 self.dstLon = (json["lon"].stringValue as NSString).doubleValue
                 self.initializeMaps(self.dstLat, lon: self.dstLon)
@@ -100,9 +97,10 @@ class CourseViewController: UITableViewController, CLLocationManagerDelegate  {
     
     override func viewDidAppear(animated: Bool) {
         getUserLocation()
-        self.course_name.sizeToFit()
-        self.course_description.sizeToFit()
-        self.course_time.sizeToFit()
+        self.nameLabel.sizeToFit()
+        self.descriptionLabel.sizeToFit()
+        self.timeLabel.sizeToFit()
+        self.profAvgRatingLabel.sizeToFit()
         
         //initializeMaps(lat, lon: lon)
     }
