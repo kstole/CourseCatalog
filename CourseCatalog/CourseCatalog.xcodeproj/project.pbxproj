@@ -24,6 +24,7 @@
 		BDF3A8C61AEC2CE10036CAA8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDF3A8C41AEC2CE10036CAA8 /* LaunchScreen.xib */; };
 		BDF3A8D21AEC2CE10036CAA8 /* CourseCatalogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3A8D11AEC2CE10036CAA8 /* CourseCatalogTests.swift */; };
 		BDF3A8DC1AEC37FD0036CAA8 /* CombinedViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3A8DB1AEC37FD0036CAA8 /* CombinedViewControllerExtensions.swift */; };
+		BE9786D31AEC8BA90011DA0B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9786D21AEC8BA90011DA0B /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		BDF3A8D01AEC2CE10036CAA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDF3A8D11AEC2CE10036CAA8 /* CourseCatalogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCatalogTests.swift; sourceTree = "<group>"; };
 		BDF3A8DB1AEC37FD0036CAA8 /* CombinedViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CombinedViewControllerExtensions.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		BE9786D21AEC8BA90011DA0B /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F40001EC0C99207B13F02274 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -148,7 +150,7 @@
 				BD4445931AEC5D570078A673 /* MajorViewController.swift */,
 				BD4445941AEC5D570078A673 /* MajorViewControllerExtensions.swift */,
 				BDF3A8BD1AEC2CE10036CAA8 /* CourseViewController.swift */,
-				BE7026D21AEC7A1800EE0968 /* NetworkManager.swift */,
+				BE9786D21AEC8BA90011DA0B /* NetworkManager.swift */,
 				BDC552001AEC767700FB1223 /* Extensions */,
 				BDF3A8BF1AEC2CE10036CAA8 /* Main.storyboard */,
 				BDF3A8C21AEC2CE10036CAA8 /* Images.xcassets */,
@@ -344,7 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE7026D31AEC7A1800EE0968 /* NetworkManager.swift in Sources */,
+				BE9786D31AEC8BA90011DA0B /* NetworkManager.swift in Sources */,
 				BDF3A8DC1AEC37FD0036CAA8 /* CombinedViewControllerExtensions.swift in Sources */,
 				BDC552051AEC778700FB1223 /* Course.swift in Sources */,
 				BD4445951AEC5D570078A673 /* MajorViewController.swift in Sources */,
