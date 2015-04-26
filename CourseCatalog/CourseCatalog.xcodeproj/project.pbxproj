@@ -20,6 +20,7 @@
 		BDF3A8C61AEC2CE10036CAA8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDF3A8C41AEC2CE10036CAA8 /* LaunchScreen.xib */; };
 		BDF3A8D21AEC2CE10036CAA8 /* CourseCatalogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3A8D11AEC2CE10036CAA8 /* CourseCatalogTests.swift */; };
 		BDF3A8DC1AEC37FD0036CAA8 /* CombinedViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3A8DB1AEC37FD0036CAA8 /* CombinedViewControllerExtensions.swift */; };
+		BE7026D11AEC755C00EE0968 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7026D01AEC755C00EE0968 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		BDF3A8D01AEC2CE10036CAA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDF3A8D11AEC2CE10036CAA8 /* CourseCatalogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCatalogTests.swift; sourceTree = "<group>"; };
 		BDF3A8DB1AEC37FD0036CAA8 /* CombinedViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombinedViewControllerExtensions.swift; sourceTree = "<group>"; };
+		BE7026D01AEC755C00EE0968 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F40001EC0C99207B13F02274 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -113,6 +115,7 @@
 				BD4445941AEC5D570078A673 /* SubjectViewControllerExtensions.swift */,
 				BDF3A8BD1AEC2CE10036CAA8 /* CourseViewController.swift */,
 				BD9ED7351AEC4314005105A0 /* UiColorExtension.swift */,
+				BE7026D01AEC755C00EE0968 /* NetworkManager.swift */,
 				BDF3A8BF1AEC2CE10036CAA8 /* Main.storyboard */,
 				BDF3A8C21AEC2CE10036CAA8 /* Images.xcassets */,
 				BDF3A8C41AEC2CE10036CAA8 /* LaunchScreen.xib */,
@@ -310,6 +313,7 @@
 				BD4445951AEC5D570078A673 /* SubjectViewController.swift in Sources */,
 				BDF3A8BE1AEC2CE10036CAA8 /* CourseViewController.swift in Sources */,
 				BD4445961AEC5D570078A673 /* SubjectViewControllerExtensions.swift in Sources */,
+				BE7026D11AEC755C00EE0968 /* NetworkManager.swift in Sources */,
 				BD9ED7361AEC4314005105A0 /* UiColorExtension.swift in Sources */,
 				BDF3A8BC1AEC2CE10036CAA8 /* CombinedViewController.swift in Sources */,
 				BDF3A8BA1AEC2CE10036CAA8 /* AppDelegate.swift in Sources */,
