@@ -43,7 +43,6 @@ class CourseViewController: UITableViewController, CLLocationManagerDelegate  {
     
     var userLat:Double!
     var userLon:Double!
-    var classId:String!
 
     let locationManager = CLLocationManager()
     
@@ -77,28 +76,23 @@ class CourseViewController: UITableViewController, CLLocationManagerDelegate  {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
-        
-        //#pragma warning deletes all NSUserDefaults
+        // FIXME: deletes all NSUserDefaults
         NSUserDefaults.standardUserDefaults().removePersistentDomainForName(NSBundle.mainBundle().bundleIdentifier!)
         
         tableView.estimatedRowHeight = 44.0
         tableView.rowHeight = UITableViewAutomaticDimension
-        classId = "35"
         
-        //self.configureView()
+        self.configureView()
     }
     
     override func viewWillAppear(animated: Bool) {
-        if (ClassList.isAdded(classId)) {
+        if let course = detailItem as? Course where (ClassList.isAdded(course.id)) {
             self.addButton.enabled = false
-        }
-        else {
+        } else {
             self.addButton.enabled = true
         }
         
     }
-    
     
     override func viewDidAppear(animated: Bool) {
         getUserLocation()
@@ -168,7 +162,9 @@ class CourseViewController: UITableViewController, CLLocationManagerDelegate  {
 
     @IBAction func addClass(sender: AnyObject) {
         if (self.result != nil) {
-            ClassList.saveClass(classId, json: self.result)
+            if let course = self.detailItem as? Course {
+                ClassList.saveClass(course.id, json: self.result)
+            }
             self.addButton.enabled = false
         }
         else {
