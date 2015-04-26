@@ -25,6 +25,16 @@ class CombinedViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let firstLaunch = NSUserDefaults.standardUserDefaults().boolForKey("FirstLaunch")
+        if firstLaunch {
+            // Client has launched before
+        } else {
+            println("First launch. Setting NSUserDefaults(FirstLaunch).")
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "FirstLaunch")
+            self.performSegueWithIdentifier("firstLaunch", sender: self)
+        }
+        
         SwiftSpinner.show("Acquiring data...")
         NetworkManager.getMajors({ (json: JSON) -> Void in
             //The `index` is 0..<json.count's string value
@@ -41,15 +51,6 @@ class CombinedViewController: UITableViewController {
             self.tableView.reloadData()
             SwiftSpinner.hide()
         })
-        
-        let firstLaunch = NSUserDefaults.standardUserDefaults().boolForKey("FirstLaunch")
-        if firstLaunch {
-            // Client has launched before
-        } else {
-            println("First launch. Setting NSUserDefaults(FirstLaunch).")
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "FirstLaunch")
-            self.performSegueWithIdentifier("firstLaunch", sender: self)
-        }
         
         // Configure countryTable
         self.tableView.delegate = self
