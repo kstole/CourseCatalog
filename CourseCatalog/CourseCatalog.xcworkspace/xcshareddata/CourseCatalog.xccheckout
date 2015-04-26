@@ -5,13 +5,13 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>D91BD40E-D8BF-42DD-8C91-24333C5C9A39</string>
+	<string>2CAB44E4-4587-4B81-81DD-C40C24301AFE</string>
 	<key>IDESourceControlProjectName</key>
 	<string>CourseCatalog</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>0DC053DDA00AFCFAE251F304D1529FAFB12F20AD</key>
-		<string>https://github.com/kstole/CourseCatalog</string>
+		<string>https://github.com/kstole/CourseCatalog.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>CourseCatalog/CourseCatalog.xcworkspace</string>
@@ -21,7 +21,7 @@
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/kstole/CourseCatalog</string>
+	<string>https://github.com/kstole/CourseCatalog.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>

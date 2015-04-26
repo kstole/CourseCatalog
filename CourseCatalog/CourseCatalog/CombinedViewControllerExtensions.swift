@@ -58,7 +58,6 @@ extension CombinedViewController: UITableViewDataSource {
 
 extension CombinedViewController: UITableViewDelegate {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.combinedSearchController.dismissViewControllerAnimated(false, completion: nil)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if indexPath.section == 0 {
             self.performSegueWithIdentifier("CombinedToMajor", sender: indexPath)
@@ -79,7 +78,8 @@ extension CombinedViewController: UISearchResultsUpdating {
             //let array = (self.majors as NSArray).filteredArrayUsingPredicate(searchPredicate)
             //self.searchArray = array as! [String]
             self.searchArray = self.majors.filter {
-                ($0.name.lowercaseString as NSString).containsString(searchController.searchBar.text.lowercaseString)
+                ($0.name.lowercaseString as NSString).containsString(searchController.searchBar.text.lowercaseString) ||
+                ($0.abbr.lowercaseString as NSString).containsString(searchController.searchBar.text.lowercaseString)
             }
             
         }

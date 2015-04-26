@@ -16,6 +16,7 @@
 		BDC552031AEC774100FB1223 /* Major.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC552021AEC774100FB1223 /* Major.swift */; };
 		BDC552051AEC778700FB1223 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC552041AEC778700FB1223 /* Course.swift */; };
 		BDE1DB141AEC4FCC0059A280 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BDE1DB131AEC4FCC0059A280 /* Podfile */; };
+		BDE7BCB11AECAD55005C001D /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE7BCB01AECAD55005C001D /* CourseTableViewCell.swift */; };
 		BDF3A8BA1AEC2CE10036CAA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3A8B91AEC2CE10036CAA8 /* AppDelegate.swift */; };
 		BDF3A8BC1AEC2CE10036CAA8 /* CombinedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3A8BB1AEC2CE10036CAA8 /* CombinedViewController.swift */; };
 		BDF3A8BE1AEC2CE10036CAA8 /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3A8BD1AEC2CE10036CAA8 /* CourseViewController.swift */; };
@@ -49,6 +50,7 @@
 		BDC552021AEC774100FB1223 /* Major.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Major.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		BDC552041AEC778700FB1223 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Course.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		BDE1DB131AEC4FCC0059A280 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BDE7BCB01AECAD55005C001D /* CourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
 		BDF3A8B41AEC2CE10036CAA8 /* CourseCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CourseCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDF3A8B81AEC2CE10036CAA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDF3A8B91AEC2CE10036CAA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			children = (
 				BDC552021AEC774100FB1223 /* Major.swift */,
 				BDC552041AEC778700FB1223 /* Course.swift */,
+				BDE7BCB01AECAD55005C001D /* CourseTableViewCell.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -248,7 +251,7 @@
 				TargetAttributes = {
 					BDF3A8B31AEC2CE10036CAA8 = {
 						CreatedOnToolsVersion = 6.3;
-						DevelopmentTeam = 6QBR52NJ4V;
+						DevelopmentTeam = XHYE9DWSBD;
 					};
 					BDF3A8CA1AEC2CE10036CAA8 = {
 						CreatedOnToolsVersion = 6.3;
@@ -362,6 +365,7 @@
 				BD9ED7361AEC4314005105A0 /* UiColorExtension.swift in Sources */,
 				BDF3A8BC1AEC2CE10036CAA8 /* CombinedViewController.swift in Sources */,
 				BDF3A8BA1AEC2CE10036CAA8 /* AppDelegate.swift in Sources */,
+				BDE7BCB11AECAD55005C001D /* CourseTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

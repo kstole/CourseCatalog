@@ -7,13 +7,19 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class MajorViewController: UITableViewController {
 
     @IBOutlet var courseTable: UITableView!
-    var courses = ["CS 160","CS 261"]
-    var searchArray:[String] = [String]() {
-        didSet  {self.courseTable.reloadData()}
+    
+    var courses: [Course] = [Course]()
+//    var courses = [Course("160", "Intro to Com Sci"),
+//        Course("261", "Data Structures"),
+//        Course("351", "Something else"),
+//        Course("123", "something new")]
+    var searchArray:[Course] = [Course]() {
+        didSet {self.courseTable.reloadData()}
     }
     var courseSearchController = UISearchController()
     
@@ -26,8 +32,8 @@ class MajorViewController: UITableViewController {
     
     func configureView() {
         // Update the user interface for the detail item.
-        if let detail: AnyObject = self.detailItem {
-            self.navigationItem.title = detail.description
+        if let major: Major = self.detailItem as? Major {
+            self.navigationItem.title = major.name
         }
     }
     
@@ -38,12 +44,37 @@ class MajorViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let major: Major = self.detailItem as? Major {
+            NetworkManager.getClassesWithMajorId(major.id, term: "Sp15") {
+                (json: JSON) -> Void in
+                println(json)
+                //The `index` is 0..<json.count's string value
+                for (index: String, course: JSON) in json {
+                    var crs: Course = Course()
+                    crs.number = course["class_num"].stringValue
+                    crs.name = course["class_name"].stringValue
+                    crs.id = course["class_id"].stringValue
+                    crs.profRating = (course["professor_rating"].stringValue as NSString).floatValue
+                    crs.OSUBooksPrice = (course["osu_textbook_total"].stringValue as NSString).floatValue
+                    if let major = self.detailItem as? Major {
+                        crs.major = major
+                    }
+                    if (crs.name != "" && crs.name != self.courses.last?.name) {
+                        self.courses.append(crs)
+                    }
+                }
+                
+                self.tableView.reloadData()
+            }
+        }
         
-        // Configure countryTable
+        // Configure courseTable
         self.courseTable.delegate = self
         self.courseTable.dataSource = self
         
-        // Configure countrySearchController
+        self.definesPresentationContext = true
+        
+        // Configure courseSearchController
         self.courseSearchController = ({
             // Two setups provided below:
             
@@ -71,7 +102,7 @@ class MajorViewController: UITableViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let indexPath = sender as? NSIndexPath {
-            let course = courses[indexPath.row] as String
+            let course = (self.courseSearchController.active ? searchArray[indexPath.row] : courses[indexPath.row]) as Course
             (segue.destinationViewController as! CourseViewController).detailItem = course
         }
     }
