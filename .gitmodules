@@ -1,3 +1,6 @@
 [submodule "SERVER-code"]
 	path = SERVER-code
 	url = https://github.com/pramttl/osu_courses_app
+[submodule "Android-App"]
+	path = Android-App
+	url = https://github.com/ZachR0/google-hackathon-2015
