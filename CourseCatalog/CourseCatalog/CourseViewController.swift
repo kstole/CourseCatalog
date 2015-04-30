@@ -20,6 +20,7 @@ class CourseViewController: UITableViewController, CLLocationManagerDelegate, UI
     @IBOutlet weak var profHelpfulLabel: UILabel!
     @IBOutlet weak var profEasyLabel: UILabel!
     @IBOutlet weak var profClarityLabel: UILabel!
+    @IBOutlet weak var textBookLabel: UILabel!
     
     @IBOutlet weak var map: UIView!
     //var mapView : GMSMapView!
@@ -57,7 +58,10 @@ class CourseViewController: UITableViewController, CLLocationManagerDelegate, UI
                 self.nameLabel.text = json["class_name"].stringValue
                 
                 self.timeLabel.text = json["days_of_week"].stringValue + " " + json["start_time"].stringValue + "-" + json["end_time"].stringValue
-                
+                if let course = self.detailItem as? Course {
+                    self.textBookLabel.text = course.OSUBooksPrice
+                }
+                    
                 self.profNameLabel.text = json["professor"]["first_name"].stringValue + " " + json["professor"]["last_name"].stringValue
                 
                 self.profAvgRatingLabel.text = json["professor"]["rating"].stringValue

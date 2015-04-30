@@ -12,8 +12,6 @@ class CourseTableViewCell: UITableViewCell {
 
     @IBOutlet weak var courseNum: UILabel?
     @IBOutlet weak var courseName: UILabel?
-    @IBOutlet weak var rating: UILabel!
-    @IBOutlet weak var price: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

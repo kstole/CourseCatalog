@@ -17,7 +17,7 @@ class NetworkManager {
         let monitor = UIApplication.sharedApplication().networkActivityIndicatorVisible
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         Alamofire.request(.GET, "\(url)/majors/")
-            .responseJSON { (_, _, response, error) in
+            .responseJSON { (_, _, response, error: NSError?) in
                     if error == nil {
                         var json = JSON(response!)
                         callback(json)

@@ -212,7 +212,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Eh-Jc-dkV">
-                                            <rect key="frame" x="45" y="11" width="106" height="21"/>
+                                            <rect key="frame" x="45" y="11" width="547" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="p9u-jN-LTf"/>
                                                 <constraint firstAttribute="width" constant="200" id="yhD-Gt-IpI"/>
@@ -226,34 +226,11 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rating" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDk-2y-cSe">
-                                            <rect key="frame" x="568" y="8" width="32" height="15"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="32" id="5hi-FS-JeU"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1I-mU-jxM">
-                                            <rect key="frame" x="560" y="20" width="40" height="15"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="40" id="RKc-1k-bWF"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="q1I-mU-jxM" firstAttribute="bottom" secondItem="W1A-pT-RgN" secondAttribute="bottomMargin" id="FSL-WP-b7A"/>
-                                        <constraint firstItem="q1I-mU-jxM" firstAttribute="trailing" secondItem="W1A-pT-RgN" secondAttribute="trailingMargin" constant="8" id="Ryc-J5-Oqz"/>
-                                        <constraint firstItem="q1I-mU-jxM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0Eh-Jc-dkV" secondAttribute="trailing" id="XZC-Zf-iDo"/>
-                                        <constraint firstItem="BDk-2y-cSe" firstAttribute="top" secondItem="W1A-pT-RgN" secondAttribute="topMargin" id="dvp-xt-ETm"/>
+                                        <constraint firstItem="0Eh-Jc-dkV" firstAttribute="trailing" secondItem="W1A-pT-RgN" secondAttribute="trailingMargin" id="Z4Q-yj-zmd"/>
                                         <constraint firstItem="Z41-lb-sQG" firstAttribute="leading" secondItem="W1A-pT-RgN" secondAttribute="leadingMargin" constant="-8" id="i3m-6N-7mv"/>
                                         <constraint firstAttribute="centerY" secondItem="0Eh-Jc-dkV" secondAttribute="centerY" id="jCc-tq-7dF"/>
-                                        <constraint firstItem="BDk-2y-cSe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0Eh-Jc-dkV" secondAttribute="trailing" id="lzo-dq-M4V"/>
-                                        <constraint firstItem="BDk-2y-cSe" firstAttribute="trailing" secondItem="W1A-pT-RgN" secondAttribute="trailingMargin" constant="8" id="qmj-XH-Awi"/>
                                         <constraint firstItem="0Eh-Jc-dkV" firstAttribute="leading" secondItem="W1A-pT-RgN" secondAttribute="leadingMargin" constant="37" id="v9n-lG-fmc"/>
                                         <constraint firstAttribute="centerY" secondItem="Z41-lb-sQG" secondAttribute="centerY" constant="-0.5" id="xs5-Dt-MgU"/>
                                     </constraints>
@@ -261,8 +238,6 @@
                                 <connections>
                                     <outlet property="courseName" destination="0Eh-Jc-dkV" id="GGe-er-I4z"/>
                                     <outlet property="courseNum" destination="Z41-lb-sQG" id="BhO-VU-TMk"/>
-                                    <outlet property="price" destination="q1I-mU-jxM" id="FBa-Cz-oi0"/>
-                                    <outlet property="rating" destination="BDk-2y-cSe" id="t59-PT-5KH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -356,6 +331,42 @@
                                                 <constraint firstItem="pPq-ku-Yy5" firstAttribute="trailing" secondItem="60D-Xl-PH1" secondAttribute="trailingMargin" id="kcm-p4-Xsw"/>
                                                 <constraint firstItem="mf2-Hd-9Lz" firstAttribute="centerY" secondItem="pPq-ku-Yy5" secondAttribute="centerY" id="npa-3m-dyv"/>
                                                 <constraint firstItem="mf2-Hd-9Lz" firstAttribute="leading" secondItem="60D-Xl-PH1" secondAttribute="leadingMargin" id="pZf-RX-FUX"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8v3-un-ShM">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8v3-un-ShM" id="Iff-mh-mPI">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Textbook Price:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWk-0H-Acf">
+                                                    <rect key="frame" x="8" y="11" width="119" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="119" id="6z8-SJ-KXG"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="119" id="LAJ-Uk-tyP"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="LAJ-Uk-tyP"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3WK-79-80M">
+                                                    <rect key="frame" x="137" y="11" width="455" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3WK-79-80M" firstAttribute="leading" secondItem="IWk-0H-Acf" secondAttribute="trailing" constant="10" id="CL9-ux-kxN"/>
+                                                <constraint firstItem="IWk-0H-Acf" firstAttribute="leading" secondItem="Iff-mh-mPI" secondAttribute="leadingMargin" id="GMn-Io-WoE"/>
+                                                <constraint firstAttribute="centerY" secondItem="IWk-0H-Acf" secondAttribute="centerY" id="HtX-dP-3mi"/>
+                                                <constraint firstItem="3WK-79-80M" firstAttribute="leading" secondItem="IWk-0H-Acf" secondAttribute="trailing" constant="10" id="LqN-ZI-1GH"/>
+                                                <constraint firstItem="IWk-0H-Acf" firstAttribute="centerY" secondItem="3WK-79-80M" secondAttribute="centerY" id="drB-Sj-uMa"/>
+                                                <constraint firstItem="3WK-79-80M" firstAttribute="trailing" secondItem="Iff-mh-mPI" secondAttribute="trailingMargin" id="yV1-Nb-6HO"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -538,6 +549,7 @@
                         <outlet property="profEasyLabel" destination="eZn-hB-xLP" id="iCG-c3-RqX"/>
                         <outlet property="profHelpfulLabel" destination="HmN-dM-OCj" id="fbN-l5-poe"/>
                         <outlet property="profNameLabel" destination="GUe-7o-AkJ" id="B6S-Po-4gv"/>
+                        <outlet property="textBookLabel" destination="3WK-79-80M" id="hkP-7d-nFS"/>
                         <outlet property="timeLabel" destination="pPq-ku-Yy5" id="fIn-Ny-Smn"/>
                     </connections>
                 </tableViewController>

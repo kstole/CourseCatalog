@@ -33,8 +33,7 @@ extension MajorViewController: UITableViewDataSource {
             let source = (self.courseSearchController.active ? self.searchArray : self.courses)
             cell.courseNum?.text = source[indexPath.row].number
             cell.courseName?.text = source[indexPath.row].name
-            cell.price.text = source[indexPath.row].OSUBooksPrice
-            cell.rating.text = source[indexPath.row].profRating
+            
             let adj = 190
 
             return cell
